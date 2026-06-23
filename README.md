@@ -1,36 +1,97 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next Template
 
-## Getting Started
+Reusable `Next.js` baseline for App Router projects with:
 
-First, run the development server:
+- `TanStack Query` provider setup and SSR hydration pattern
+- mirrored `api/endpoints/*` and `api/hooks/*` structure
+- internal `GET /api/health` example
+- `next-themes`, `nuqs`, `sonner`, `react-hook-form`, `zod`, `motion`
+- `Vitest`, `Playwright`, `Husky`, `lint-staged`
+
+## Stack Baseline
+
+- `Next.js 16`
+- `React 19`
+- `TypeScript`
+- `Tailwind CSS v4`
+- `shadcn/ui`
+
+## Environment
+
+Copy the contract from [.env.example](./.env.example):
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+NEXT_PUBLIC_APP_URL=http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Typed env access lives in `lib/env.ts`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Providers
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Root providers are composed in `app/providers.tsx`:
 
-## Learn More
+- `NuqsAdapter`
+- `ThemeProvider`
+- `QueryClientProvider`
+- `Sonner` toaster
 
-To learn more about Next.js, take a look at the following resources:
+`lib/react-query.ts` contains the shared Query Client baseline:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- browser singleton for client components
+- fresh client per server request
+- SSR-friendly defaults with `staleTime`, `retry`, and `refetchOnWindowFocus`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## API Structure
 
-## Deploy on Vercel
+Use this mirrored pattern:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```text
+api/
+  endpoints/
+    system/
+      get-health.ts
+  hooks/
+    system/
+      use-health-query.ts
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Rules:
+
+- `api/endpoints/*` is the network layer
+- `api/hooks/*` wraps endpoints with `TanStack Query`
+- internal server logic lives outside this layer
+- route handlers adapt server logic to HTTP
+
+Current example:
+
+- shared source: `lib/server/health.ts`
+- route handler: `app/api/health/route.ts`
+- endpoint: `api/endpoints/system/get-health.ts`
+- hook: `api/hooks/system/use-health-query.ts`
+
+## SSR Query Pattern
+
+Server prefetch lives in `app/page.tsx`:
+
+1. create a server-side `QueryClient`
+2. prefetch with the same query key used on the client
+3. wrap the client tree with `HydrationBoundary`
+
+Client components then consume the cached data with the mirrored hook.
+
+## Scripts
+
+```bash
+pnpm dev
+pnpm build
+pnpm lint
+pnpm typecheck
+pnpm test --run
+pnpm test:e2e
+```
+
+## Tests
+
+- unit: `tests/api-client.test.ts`
+- component: `tests/template-demo-form.test.tsx`
+- e2e smoke: `e2e/home.spec.ts`
