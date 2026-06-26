@@ -30,7 +30,7 @@ export const ShowcaseNavLink = ({
 
   return (
     <Link
-      href={`/showcase/components/${entry.slug}`}
+      href={`/components/${entry.slug}`}
       className="group rounded-2xl border border-border/70 bg-card/80 p-4 shadow-sm transition-colors hover:bg-card"
     >
       <div

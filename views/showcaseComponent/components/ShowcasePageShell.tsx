@@ -27,7 +27,7 @@ export const ShowcasePageShell = ({
       <header className="space-y-6 rounded-[28px] border border-border/70 bg-card/80 px-6 py-6 shadow-sm backdrop-blur-sm lg:px-8 lg:py-8">
         <div className="space-y-4">
           <Button variant="outline" size="sm" asChild>
-            <Link href="/showcase/components">
+            <Link href="/components">
               <ArrowLeft />
               Back to catalog
             </Link>

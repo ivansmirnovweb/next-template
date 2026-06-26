@@ -6,9 +6,9 @@ const FOOTER_LINK_GROUPS = [
   {
     title: 'Showcase',
     links: [
-      { label: 'Overview', href: '/showcase' },
-      { label: 'Components', href: '/showcase/components' },
-      { label: 'Sections', href: '/showcase/sections' },
+      { label: 'Overview', href: '/' },
+      { label: 'Components', href: '/components' },
+      { label: 'Sections', href: '/sections' },
     ],
   },
   {

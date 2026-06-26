@@ -1,52 +1,34 @@
 'use client';
 
-import * as React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-import { ChevronDown, Compass } from 'lucide-react';
+import { Compass } from 'lucide-react';
 
 import { ThemeToggle } from '@/components/ThemeToggle';
-import { Button, buttonVariants } from '@/components/ui/button';
-import { cn } from '@/lib/utils';
-import { showcaseEntries } from '@/views/showcaseComponent';
+import { Button } from '@/components/ui/button';
 
 type NavLink = {
   label: string;
   href: string;
 };
 
-type HeaderNavItem = NavLink & {
-  children?: NavLink[];
-};
-
-const HEADER_NAV_ITEMS: HeaderNavItem[] = [
+const HEADER_NAV_ITEMS: NavLink[] = [
   {
     label: 'Components',
-    href: '/showcase/components',
-    children: showcaseEntries.map((entry) => ({
-      label: entry.title,
-      href: `/showcase/components/${entry.slug}`,
-    })),
+    href: '/components',
   },
   {
     label: 'Sections',
-    href: '/showcase/sections',
+    href: '/sections',
   },
 ];
 
-const isActivePath = (pathname: string, href: string) => pathname === href;
+const isActivePath = (pathname: string, href: string) =>
+  pathname === href || pathname.startsWith(`${href}/`);
 
 export const Header = () => {
   const pathname = usePathname();
-  const [openItemHref, setOpenItemHref] = React.useState<string | null>(null);
-
-  const handleNavItemBlur =
-    (href: string) => (event: React.FocusEvent<HTMLLIElement>) => {
-      if (!event.currentTarget.contains(event.relatedTarget)) {
-        setOpenItemHref((current) => (current === href ? null : current));
-      }
-    };
 
   return (
     <header className="border-b border-border/60 bg-background/85 backdrop-blur-xl">
@@ -65,96 +47,7 @@ export const Header = () => {
           <nav aria-label="Showcase navigation">
             <ul className="flex flex-wrap items-center gap-2">
               {HEADER_NAV_ITEMS.map((item) => {
-                const childActive = item.children?.some((child) =>
-                  isActivePath(pathname, child.href),
-                );
-                const active = isActivePath(pathname, item.href) || childActive;
-
-                if (item.children?.length) {
-                  const isOpen = openItemHref === item.href;
-
-                  return (
-                    <li
-                      key={item.href}
-                      className="relative"
-                      onMouseEnter={() => setOpenItemHref(item.href)}
-                      onMouseLeave={() => setOpenItemHref(null)}
-                      onFocus={() => setOpenItemHref(item.href)}
-                      onBlur={handleNavItemBlur(item.href)}
-                    >
-                      <div className="flex items-center rounded-lg border border-transparent bg-background">
-                        <Button
-                          asChild
-                          variant={active ? 'default' : 'outline'}
-                          size="sm"
-                          className="rounded-r-none border-r-0"
-                        >
-                          <Link href={item.href}>{item.label}</Link>
-                        </Button>
-                        <button
-                          type="button"
-                          aria-label={`Open ${item.label} menu`}
-                          aria-expanded={isOpen}
-                          className={cn(
-                            buttonVariants({
-                              variant: active ? 'default' : 'outline',
-                              size: 'sm',
-                            }),
-                            'rounded-l-none px-2',
-                          )}
-                          onClick={() =>
-                            setOpenItemHref((current) =>
-                              current === item.href ? null : item.href,
-                            )
-                          }
-                        >
-                          <ChevronDown
-                            className={cn(
-                              'size-4 transition-transform',
-                              isOpen && 'rotate-180',
-                            )}
-                          />
-                        </button>
-                      </div>
-
-                      {isOpen ? (
-                        <div className="absolute left-0 top-full z-50 mt-2 w-64 overflow-hidden rounded-lg bg-popover p-1 text-popover-foreground shadow-md ring-1 ring-foreground/10">
-                          <div className="px-1.5 py-1 text-xs font-medium text-muted-foreground">
-                            {item.label}
-                          </div>
-                          <Button
-                            asChild
-                            variant={isActivePath(pathname, item.href) ? 'secondary' : 'ghost'}
-                            size="sm"
-                            className="w-full justify-start"
-                          >
-                            <Link href={item.href}>Open overview</Link>
-                          </Button>
-                          <div className="-mx-1 my-1 h-px bg-border" />
-                          {item.children.map((child) => (
-                            <Button
-                              key={child.href}
-                              asChild
-                              variant={
-                                isActivePath(pathname, child.href)
-                                  ? 'secondary'
-                                  : 'ghost'
-                              }
-                              size="sm"
-                              className="w-full justify-start"
-                            >
-                              <Link
-                                href={child.href}
-                              >
-                                {child.label}
-                              </Link>
-                            </Button>
-                          ))}
-                        </div>
-                      ) : null}
-                    </li>
-                  );
-                }
+                const active = isActivePath(pathname, item.href);
 
                 return (
                   <li key={item.href}>

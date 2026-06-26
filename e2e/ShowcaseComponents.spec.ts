@@ -3,7 +3,7 @@ import { expect, test } from '@playwright/test';
 test('renders the showcase catalog and navigates to a detail page', async ({
   page,
 }) => {
-  await page.goto('/showcase/components');
+  await page.goto('/components');
 
   await expect(
     page.getByRole('heading', { name: /component showcase navigation/i }),

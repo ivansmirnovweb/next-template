@@ -29,7 +29,7 @@ export const ShowcaseComponentsPage = () => {
                 key={entry.slug}
                 title={entry.title}
                 description={entry.description}
-                href={`/showcase/components/${entry.slug}`}
+                href={`/components/${entry.slug}`}
               />
             ))}
           </ul>
@@ -45,7 +45,7 @@ export const ShowcaseComponentsPage = () => {
                 key={entry.slug}
                 title={entry.title}
                 description={entry.description}
-                href={`/showcase/components/${entry.slug}`}
+                href={`/components/${entry.slug}`}
               />
             ))}
           </ul>
@@ -61,7 +61,7 @@ export const ShowcaseComponentsPage = () => {
                 key={entry.slug}
                 title={entry.title}
                 description={entry.description}
-                href={`/showcase/components/${entry.slug}`}
+                href={`/components/${entry.slug}`}
               />
             ))}
           </ul>
@@ -77,7 +77,7 @@ export const ShowcaseComponentsPage = () => {
                 key={entry.slug}
                 title={entry.title}
                 description={entry.description}
-                href={`/showcase/components/${entry.slug}`}
+                href={`/components/${entry.slug}`}
               />
             ))}
           </ul>
