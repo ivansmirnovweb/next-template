@@ -1,5 +1,5 @@
 import { redirect } from 'next/navigation';
 
 export default function Page() {
-  return redirect('/showcase');
+  return <div>999</div>;
 }
