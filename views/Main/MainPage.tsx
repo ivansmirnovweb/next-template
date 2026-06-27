@@ -2,12 +2,7 @@ import Link from 'next/link';
 
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-
-const HIGHLIGHTS = [
-  'Next.js App Router',
-  'React + TypeScript',
-  'Tailwind v4 + shadcn/ui',
-];
+import { FEATURES, HIGHLIGHTS } from './constants';
 
 export const MainPage = () => {
   return (
@@ -69,23 +64,7 @@ export const MainPage = () => {
               </div>
 
               <div className="grid gap-3">
-                {[
-                  {
-                    title: 'База для приложения',
-                    description:
-                      'Стартовая точка без лишней архитектурной нагрузки.',
-                  },
-                  {
-                    title: 'Единый визуальный стиль',
-                    description:
-                      'Те же карточки, бордюры и типографика, что и на остальном сайте.',
-                  },
-                  {
-                    title: 'Готово к расширению',
-                    description:
-                      'Можно заменить этот экран на продуктовый контент без переделки основы.',
-                  },
-                ].map((item) => (
+                {FEATURES.map((item) => (
                   <div
                     key={item.title}
                     className="rounded-2xl border border-border/60 bg-card/80 p-4"
