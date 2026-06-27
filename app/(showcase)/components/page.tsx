@@ -1,4 +1,4 @@
-import { ShowcaseComponentsPage } from '@/views/showcaseComponents';
+import { ShowcaseComponentsPage } from '@/views/ShowcaseComponents';
 
 export default function Page() {
   return <ShowcaseComponentsPage />;

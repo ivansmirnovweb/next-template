@@ -1,5 +1,5 @@
-import { redirect } from 'next/navigation';
+import { MainPage } from '@/views/Main';
 
 export default function Page() {
-  return <div>999</div>;
+  return <MainPage />;
 }

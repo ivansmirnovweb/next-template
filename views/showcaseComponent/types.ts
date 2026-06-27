@@ -37,8 +37,3 @@ export type ShowcaseComponentPageProps = {
   previous?: ShowcaseEntry;
   next?: ShowcaseEntry;
 };
-
-export type ComponentLink = {
-  label: string;
-  href: string;
-};

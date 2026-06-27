@@ -1,1 +1,1 @@
-export { ShowcaseComponentsPage } from './showcaseComponentsPage';
+export { ShowcaseComponentsPage } from './ShowcaseComponentsPage';
