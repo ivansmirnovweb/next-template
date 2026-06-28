@@ -1,7 +1,6 @@
 import { Compass } from "lucide-react";
 
 import { HeaderSimple } from "@/components/Header";
-import { Button } from "@/components/ui/button";
 import { ShowcaseSectionPreviewCard } from "./ShowcaseSectionPreviewCard";
 import { ShowcaseSectionPreviewFrame } from "./ShowcaseSectionPreviewFrame";
 
@@ -50,18 +49,6 @@ export const HeaderSimpleSectionShowcase = () => {
             ]}
           />
         }
-        summary="`HeaderSimple` is tuned for landing pages and product marketing surfaces where the main job is fast orientation plus one high-priority next step."
-        actions={
-          <div className="flex flex-wrap gap-3">
-            <Button>Primary CTA</Button>
-            <Button variant="outline">Secondary route</Button>
-          </div>
-        }
-        bullets={[
-          "Nested desktop dropdown under “Solutions”",
-          "CTA repeated inside mobile sheet",
-          "Secondary account and docs links in mobile menu",
-        ]}
       />
     </ShowcaseSectionPreviewCard>
   );

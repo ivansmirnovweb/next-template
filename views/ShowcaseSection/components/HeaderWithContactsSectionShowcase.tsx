@@ -1,7 +1,6 @@
 import { MapPin, MessageCircleMore, Phone } from "lucide-react";
 
 import { HeaderWithContacts } from "@/components/Header";
-import { Button } from "@/components/ui/button";
 import { ShowcaseSectionPreviewCard } from "./ShowcaseSectionPreviewCard";
 import { ShowcaseSectionPreviewFrame } from "./ShowcaseSectionPreviewFrame";
 
@@ -69,18 +68,6 @@ export const HeaderWithContactsSectionShowcase = () => {
             ]}
           />
         }
-        summary="`HeaderWithContacts` keeps the primary row visually dominant while the lower strip stays dense, scannable, and useful for fast mobile calling."
-        actions={
-          <div className="flex flex-wrap gap-3">
-            <Button>Request callback</Button>
-            <Button variant="outline">Download checklist</Button>
-          </div>
-        }
-        bullets={[
-          "Direct call action in the mobile top bar",
-          "Address, hours, phone, and messenger links",
-          "Nested “Clinics” group for desktop and mobile",
-        ]}
       />
     </ShowcaseSectionPreviewCard>
   );

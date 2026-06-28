@@ -1,7 +1,6 @@
-import { ArrowRight, Compass } from "lucide-react";
+import { Compass } from "lucide-react";
 
 import { HeaderCentered } from "@/components/Header";
-import { Button } from "@/components/ui/button";
 import { ShowcaseSectionPreviewCard } from "./ShowcaseSectionPreviewCard";
 import { ShowcaseSectionPreviewFrame } from "./ShowcaseSectionPreviewFrame";
 
@@ -75,21 +74,6 @@ export const HeaderCenteredSectionShowcase = () => {
             ]}
           />
         }
-        summary="`HeaderCentered` is intentionally more compositional than `HeaderSimple`: the left and right link groups frame the mark instead of behaving like one continuous nav rail."
-        actions={
-          <div className="flex flex-wrap gap-3">
-            <Button variant="secondary">View collection</Button>
-            <Button variant="outline">
-              Read journal
-              <ArrowRight className="size-4" />
-            </Button>
-          </div>
-        }
-        bullets={[
-          "Separate left and right navigation props",
-          "Centered logo as the main visual anchor",
-          "Full-screen mobile dialog with CTA and contacts",
-        ]}
       />
     </ShowcaseSectionPreviewCard>
   );

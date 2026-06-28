@@ -16,13 +16,13 @@ export const ShowcaseSectionPreviewCard = ({
   children,
 }: ShowcaseSectionPreviewCardProps) => {
   return (
-    <div className="overflow-hidden rounded-[30px] border border-border/70 bg-card/80 shadow-sm">
-      <div className="flex flex-col gap-3 border-b border-border/60 bg-background/80 px-5 py-5 sm:px-6">
+    <section className="space-y-5">
+      <div className="rounded-[28px] border border-border/70 bg-card/80 px-5 py-5 shadow-sm backdrop-blur-sm sm:px-6">
         <div className="inline-flex w-fit items-center gap-2 rounded-full border border-border/70 bg-card/85 px-3 py-1 text-[11px] font-medium tracking-[0.22em] text-muted-foreground uppercase">
           <Sparkles className="size-3.5" />
           {eyebrow}
         </div>
-        <div className="space-y-2">
+        <div className="mt-4 space-y-2">
           <h2 className="font-heading text-2xl font-medium text-foreground">
             {title}
           </h2>
@@ -32,6 +32,6 @@ export const ShowcaseSectionPreviewCard = ({
         </div>
       </div>
       {children}
-    </div>
+    </section>
   );
 };
