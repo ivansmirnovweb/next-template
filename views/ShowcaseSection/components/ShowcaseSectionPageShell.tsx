@@ -3,32 +3,32 @@ import type { ReactNode } from 'react';
 
 import { ArrowLeft } from 'lucide-react';
 
-import type { ShowcaseEntry } from '../types';
+import type { ShowcaseSectionEntry } from '../types';
 
 import { Button } from '@/components/ui/button';
-import { ShowcaseAnchorNav } from './ShowcaseAnchorNav';
-import { ShowcaseNavLink } from './ShowcaseNavLink';
+import { ShowcaseAnchorNav } from '@/views/ShowcaseComponent/components/ShowcaseAnchorNav';
+import { ShowcaseSectionNavLink } from './ShowcaseSectionNavLink';
 
-type ShowcasePageShellProps = {
-  entry: ShowcaseEntry;
-  previous?: ShowcaseEntry;
-  next?: ShowcaseEntry;
+type ShowcaseSectionPageShellProps = {
+  entry: ShowcaseSectionEntry;
+  previous?: ShowcaseSectionEntry;
+  next?: ShowcaseSectionEntry;
   children: ReactNode;
 };
 
-export const ShowcasePageShell = ({
+export const ShowcaseSectionPageShell = ({
   entry,
   previous,
   next,
   children,
-}: ShowcasePageShellProps) => {
+}: ShowcaseSectionPageShellProps) => {
   return (
     <div className="layout-container py-8 sm:py-10">
       <div className="space-y-10">
         <header className="space-y-6 rounded-[28px] border border-border/70 bg-card/80 px-6 py-6 shadow-sm backdrop-blur-sm lg:px-8 lg:py-8">
           <div className="space-y-4">
             <Button variant="outline" size="sm" asChild>
-              <Link href="/components">
+              <Link href="/sections">
                 <ArrowLeft />
                 Back to catalog
               </Link>
@@ -49,14 +49,15 @@ export const ShowcasePageShell = ({
         )}
 
         {children}
+
         <section className="grid gap-4 md:grid-cols-2">
-          <ShowcaseNavLink
-            label="Previous component"
+          <ShowcaseSectionNavLink
+            label="Previous section"
             entry={previous}
             direction="previous"
           />
-          <ShowcaseNavLink
-            label="Next component"
+          <ShowcaseSectionNavLink
+            label="Next section"
             entry={next}
             direction="next"
           />

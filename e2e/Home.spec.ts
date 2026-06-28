@@ -5,9 +5,14 @@ test('renders the baseline template page', async ({ page }) => {
 
   await expect(
     page.getByRole('heading', {
-      name: /Next\.js starter wired for providers/i,
+      name: /Next\.js project template/i,
     }),
   ).toBeVisible();
-  await expect(page.getByText('Health Check')).toBeVisible();
-  await expect(page.getByText('healthy')).toBeVisible();
+  await expect(
+    page.getByText(/a clean shell for app router, ui primitives/i),
+  ).toBeVisible();
+  await expect(page.getByRole('link', { name: /open ui/i })).toBeVisible();
+  await expect(
+    page.getByRole('main').getByRole('link', { name: /browse sections/i }),
+  ).toBeVisible();
 });

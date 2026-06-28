@@ -6,7 +6,7 @@ import { FEATURES, HIGHLIGHTS } from './constants';
 
 export const MainPage = () => {
   return (
-    <section className="relative left-1/2 isolate min-h-[calc(100svh-12rem)] w-screen -translate-x-1/2 overflow-hidden border border-border/70 bg-card/70 py-10 shadow-sm backdrop-blur-sm sm:py-14 lg:py-16">
+    <section className="relative isolate min-h-[calc(100svh-12rem)] overflow-hidden border border-border/70 bg-card/70 py-10 shadow-sm backdrop-blur-sm sm:py-14 lg:py-16">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(255,255,255,0.9),_transparent_42%),radial-gradient(circle_at_bottom_right,_rgba(120,119,198,0.12),_transparent_34%),linear-gradient(135deg,_rgba(255,255,255,0.5),_transparent_40%)] opacity-90 dark:bg-[radial-gradient(circle_at_top_left,_rgba(255,255,255,0.08),_transparent_42%),radial-gradient(circle_at_bottom_right,_rgba(34,211,238,0.14),_transparent_34%),linear-gradient(135deg,_rgba(255,255,255,0.02),_transparent_40%)]" />
       <div className="pointer-events-none absolute -top-24 right-[-4rem] size-72 rounded-full bg-primary/10 blur-3xl" />
       <div className="pointer-events-none absolute -bottom-28 left-[-5rem] size-80 rounded-full bg-secondary/60 blur-3xl" />

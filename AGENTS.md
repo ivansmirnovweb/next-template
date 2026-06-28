@@ -17,6 +17,7 @@ This version has breaking changes — APIs, conventions, and file structure may 
 - Put shared utilities and runtime config in `lib/`.
 - Put API transport in `api/client.ts` and endpoint-specific calls in `api/endpoints/*`.
 - Put shared domain types in `types/`.
+- One React component per file. Do not create `shared.tsx`-style files that export multiple components, and do not hide extra components inside local JSX helpers like `renderSomething()`. If a function returns JSX and represents a reusable UI piece, move it into its own component file. Components live in component files, types in `types`, and texts/constants in dedicated constants files.
 
 ## Next.js
 
