@@ -1,16 +1,16 @@
-import Link from 'next/link';
+import Link from "next/link";
 
-import { PhoneCall } from 'lucide-react';
+import { PhoneCall } from "lucide-react";
 
-import { HeaderActionButton } from '../HeaderActionButton';
-import { HeaderDesktopNavigation } from '../HeaderDesktopNavigation';
-import { HeaderLogoMark } from '../HeaderLogoMark';
-import { HeaderSocialLinkButton } from '../HeaderSocialLinkButton';
-import type { HeaderWithContactsProps } from '../types';
-import { HeaderContactValue } from './HeaderContactValue';
-import { HeaderWithContactsMobileMenu } from './HeaderWithContactsMobileMenu';
-import { Button } from '@/components/ui/button';
-import { cn } from '@/lib/utils';
+import { HeaderActionButton } from "../HeaderActionButton";
+import { HeaderDesktopNavigation } from "../HeaderDesktopNavigation";
+import { HeaderLogoMark } from "../HeaderLogoMark";
+import { HeaderSocialLinkButton } from "../HeaderSocialLinkButton";
+import type { HeaderWithContactsProps } from "../types";
+import { HeaderContactValue } from "./HeaderContactValue";
+import { HeaderWithContactsMobileMenu } from "./HeaderWithContactsMobileMenu";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 export const HeaderWithContacts = ({
   logo,
@@ -25,7 +25,7 @@ export const HeaderWithContacts = ({
   return (
     <header
       className={cn(
-        'border-b border-border/60 bg-background/88 backdrop-blur-xl',
+        "border-b border-border/60 bg-background/88 backdrop-blur-xl",
         className,
       )}
     >
@@ -50,7 +50,7 @@ export const HeaderWithContacts = ({
 
           <div className="flex shrink-0 items-center gap-2 xl:hidden">
             <Button asChild variant="secondary" size="sm">
-              <Link href={phone.href ?? '#phone'}>
+              <Link href={phone.href ?? "#phone"}>
                 <PhoneCall className="size-4" />
                 Call
               </Link>

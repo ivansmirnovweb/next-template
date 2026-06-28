@@ -1,6 +1,6 @@
-import type { ComponentType } from 'react';
+import type { ComponentType } from "react";
 
-export const showcaseSectionGroups = ['headers'] as const;
+export const showcaseSectionGroups = ["headers"] as const;
 
 export type ShowcaseSectionGroup = (typeof showcaseSectionGroups)[number];
 

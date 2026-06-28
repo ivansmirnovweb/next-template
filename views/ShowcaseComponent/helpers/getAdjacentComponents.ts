@@ -1,5 +1,5 @@
-import { showcaseEntries } from '../constants';
-import type { ShowcaseAdjacentEntries } from '../types';
+import { showcaseEntries } from "../constants";
+import type { ShowcaseAdjacentEntries } from "../types";
 
 export function getAdjacentComponents(slug: string) {
   const currentIndex = showcaseEntries.findIndex(

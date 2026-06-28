@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
+import { useState } from "react";
 
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown } from "lucide-react";
 
-import { ShowcaseCard } from './ShowcaseCard';
-import { ShowcaseSection } from './ShowcaseSection';
-import { Button } from '@/components/ui/button';
+import { ShowcaseCard } from "./ShowcaseCard";
+import { ShowcaseSection } from "./ShowcaseSection";
+import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
@@ -21,11 +21,11 @@ import {
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
+} from "@/components/ui/dropdown-menu";
 
 export const DropdownMenuShowcase = () => {
   const [menuPinned, setMenuPinned] = useState(true);
-  const [menuDensity, setMenuDensity] = useState('comfortable');
+  const [menuDensity, setMenuDensity] = useState("comfortable");
 
   return (
     <ShowcaseSection

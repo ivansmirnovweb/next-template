@@ -1,9 +1,9 @@
-import { FieldStack } from './FieldStack';
-import { ShowcaseCard } from './ShowcaseCard';
-import { ShowcaseSection } from './ShowcaseSection';
-import { StateGrid } from './StateGrid';
-import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
+import { FieldStack } from "./FieldStack";
+import { ShowcaseCard } from "./ShowcaseCard";
+import { ShowcaseSection } from "./ShowcaseSection";
+import { StateGrid } from "./StateGrid";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
 
 export const TextareaShowcase = () => {
   return (

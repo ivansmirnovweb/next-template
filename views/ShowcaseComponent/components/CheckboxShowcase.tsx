@@ -1,13 +1,13 @@
-'use client';
+"use client";
 
-import { useId, useState } from 'react';
+import { useId, useState } from "react";
 
-import { FieldStack } from './FieldStack';
-import { ShowcaseCard } from './ShowcaseCard';
-import { ShowcaseSection } from './ShowcaseSection';
-import { StateGrid } from './StateGrid';
-import { Checkbox } from '@/components/ui/checkbox';
-import { Label } from '@/components/ui/label';
+import { FieldStack } from "./FieldStack";
+import { ShowcaseCard } from "./ShowcaseCard";
+import { ShowcaseSection } from "./ShowcaseSection";
+import { StateGrid } from "./StateGrid";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Label } from "@/components/ui/label";
 
 export const CheckboxShowcase = () => {
   const [checkboxChecked, setCheckboxChecked] = useState(true);

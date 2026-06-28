@@ -1,9 +1,9 @@
-import { FieldStack } from './FieldStack';
-import { ShowcaseCard } from './ShowcaseCard';
-import { ShowcaseSection } from './ShowcaseSection';
-import { StateGrid } from './StateGrid';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
+import { FieldStack } from "./FieldStack";
+import { ShowcaseCard } from "./ShowcaseCard";
+import { ShowcaseSection } from "./ShowcaseSection";
+import { StateGrid } from "./StateGrid";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 
 export const InputShowcase = () => {
   return (

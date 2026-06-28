@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import { MousePointerClick, Sparkles } from 'lucide-react';
+import { MousePointerClick, Sparkles } from "lucide-react";
 
-import { ShowcaseCard } from './ShowcaseCard';
-import { ShowcaseSection } from './ShowcaseSection';
-import { StateGrid } from './StateGrid';
-import { StateTile } from './StateTile';
-import { Button } from '@/components/ui/button';
+import { ShowcaseCard } from "./ShowcaseCard";
+import { ShowcaseSection } from "./ShowcaseSection";
+import { StateGrid } from "./StateGrid";
+import { StateTile } from "./StateTile";
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
@@ -15,7 +15,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from '@/components/ui/dialog';
+} from "@/components/ui/dialog";
 
 export const DialogShowcase = () => {
   return (

@@ -1,1 +1,1 @@
-export { ShowcaseSectionsPage } from './ShowcaseSectionsPage';
+export { ShowcaseSectionsPage } from "./ShowcaseSectionsPage";

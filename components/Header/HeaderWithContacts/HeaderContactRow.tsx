@@ -1,6 +1,6 @@
-import Link from 'next/link';
+import Link from "next/link";
 
-import type { HeaderContactItem } from '../types';
+import type { HeaderContactItem } from "../types";
 
 type HeaderContactRowProps = {
   item: HeaderContactItem;

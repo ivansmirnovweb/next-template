@@ -1,6 +1,6 @@
 const config = {
   semi: true,
-  singleQuote: true,
+  singleQuote: false,
   trailingComma: "all",
 };
 

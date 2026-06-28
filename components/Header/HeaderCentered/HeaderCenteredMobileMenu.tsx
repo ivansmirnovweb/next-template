@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { useId, useMemo, useState } from 'react';
+import Link from "next/link";
+import { useId, useMemo, useState } from "react";
 
-import { Menu } from 'lucide-react';
+import { Menu } from "lucide-react";
 
-import { Button } from '@/components/ui/button';
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogClose,
@@ -14,19 +14,19 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from '@/components/ui/dialog';
-import { HeaderLogoMark } from '../HeaderLogoMark';
-import { HeaderMobileLinkList } from '../HeaderMobileLinkList';
-import type { HeaderCenteredProps } from '../types';
+} from "@/components/ui/dialog";
+import { HeaderLogoMark } from "../HeaderLogoMark";
+import { HeaderMobileLinkList } from "../HeaderMobileLinkList";
+import type { HeaderCenteredProps } from "../types";
 
 type HeaderCenteredMobileMenuProps = Pick<
   HeaderCenteredProps,
-  | 'logo'
-  | 'leftNavigation'
-  | 'rightNavigation'
-  | 'cta'
-  | 'contacts'
-  | 'socialLinks'
+  | "logo"
+  | "leftNavigation"
+  | "rightNavigation"
+  | "cta"
+  | "contacts"
+  | "socialLinks"
 >;
 
 export const HeaderCenteredMobileMenu = ({
@@ -149,7 +149,7 @@ export const HeaderCenteredMobileMenu = ({
               <DialogClose asChild>
                 <Button
                   asChild
-                  variant={cta.variant ?? 'default'}
+                  variant={cta.variant ?? "default"}
                   className="w-full"
                   onClick={closeMenu}
                 >

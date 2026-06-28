@@ -1,8 +1,8 @@
-import Link from 'next/link';
+import Link from "next/link";
 
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
-import { FEATURES, HIGHLIGHTS } from './constants';
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { FEATURES, HIGHLIGHTS } from "./constants";
 
 export const MainPage = () => {
   return (

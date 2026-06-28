@@ -1,5 +1,5 @@
-import { ShowcasePageShell } from './components/ShowcasePageShell';
-import type { ShowcaseComponentPageProps } from './types';
+import { ShowcasePageShell } from "./components/ShowcasePageShell";
+import type { ShowcaseComponentPageProps } from "./types";
 
 export const ShowcaseComponentPage = ({
   entry,

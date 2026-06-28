@@ -1,26 +1,26 @@
-import { Compass } from 'lucide-react';
+import { Compass } from "lucide-react";
 
-import { HeaderSimple } from '@/components/Header';
-import { Button } from '@/components/ui/button';
-import { ShowcaseSectionPreviewCard } from './ShowcaseSectionPreviewCard';
-import { ShowcaseSectionPreviewFrame } from './ShowcaseSectionPreviewFrame';
+import { HeaderSimple } from "@/components/Header";
+import { Button } from "@/components/ui/button";
+import { ShowcaseSectionPreviewCard } from "./ShowcaseSectionPreviewCard";
+import { ShowcaseSectionPreviewFrame } from "./ShowcaseSectionPreviewFrame";
 
 const headerSimpleNavigation = [
-  { label: 'Services', href: '#services' },
+  { label: "Services", href: "#services" },
   {
-    label: 'Solutions',
-    href: '#solutions',
+    label: "Solutions",
+    href: "#solutions",
     items: [
-      { label: 'Customer support orchestration', href: '#support' },
-      { label: 'Knowledge base operations', href: '#knowledge' },
+      { label: "Customer support orchestration", href: "#support" },
+      { label: "Knowledge base operations", href: "#knowledge" },
       {
-        label: 'Cross-team enablement with longer navigation labels',
-        href: '#enablement',
+        label: "Cross-team enablement with longer navigation labels",
+        href: "#enablement",
       },
     ],
   },
-  { label: 'Pricing', href: '#pricing' },
-  { label: 'Case studies', href: '#cases' },
+  { label: "Pricing", href: "#pricing" },
+  { label: "Case studies", href: "#cases" },
 ] as const;
 
 export const HeaderSimpleSectionShowcase = () => {
@@ -34,19 +34,19 @@ export const HeaderSimpleSectionShowcase = () => {
         preview={
           <HeaderSimple
             logo={{
-              label: 'Northstar OS',
-              href: '#top',
-              subtitle: 'Operational clarity for distributed support teams',
+              label: "Northstar OS",
+              href: "#top",
+              subtitle: "Operational clarity for distributed support teams",
               icon: <Compass className="size-4" />,
             }}
             navigation={headerSimpleNavigation}
             cta={{
-              label: 'Book walkthrough',
-              href: '#walkthrough',
+              label: "Book walkthrough",
+              href: "#walkthrough",
             }}
             secondaryLinks={[
-              { label: 'Customer login', href: '#login' },
-              { label: 'Partner docs', href: '#docs' },
+              { label: "Customer login", href: "#login" },
+              { label: "Partner docs", href: "#docs" },
             ]}
           />
         }
@@ -58,9 +58,9 @@ export const HeaderSimpleSectionShowcase = () => {
           </div>
         }
         bullets={[
-          'Nested desktop dropdown under “Solutions”',
-          'CTA repeated inside mobile sheet',
-          'Secondary account and docs links in mobile menu',
+          "Nested desktop dropdown under “Solutions”",
+          "CTA repeated inside mobile sheet",
+          "Secondary account and docs links in mobile menu",
         ]}
       />
     </ShowcaseSectionPreviewCard>

@@ -1,6 +1,6 @@
-import type { ReactNode } from 'react';
+import type { ReactNode } from "react";
 
-import { Sparkles } from 'lucide-react';
+import { Sparkles } from "lucide-react";
 
 type ShowcaseSectionPreviewCardProps = {
   eyebrow: string;

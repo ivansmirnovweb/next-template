@@ -1,12 +1,12 @@
-import type { Metadata } from 'next';
-import { notFound } from 'next/navigation';
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 
-import { ShowcaseSectionPage } from '@/views/ShowcaseSection';
+import { ShowcaseSectionPage } from "@/views/ShowcaseSection";
 import {
   showcaseSectionEntries,
   showcaseSectionEntryBySlug,
-} from '@/views/ShowcaseSection/constants';
-import { getAdjacentSections } from '@/views/ShowcaseSection/helpers/getAdjacentSections';
+} from "@/views/ShowcaseSection/constants";
+import { getAdjacentSections } from "@/views/ShowcaseSection/helpers/getAdjacentSections";
 
 type ShowcaseSectionDetailPageProps = {
   params: Promise<{
@@ -26,7 +26,7 @@ export const generateMetadata = async ({
 
   if (!entry) {
     return {
-      title: 'Section showcase not found',
+      title: "Section showcase not found",
     };
   }
 

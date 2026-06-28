@@ -1,13 +1,13 @@
-import Link from 'next/link';
-import type { ReactNode } from 'react';
+import Link from "next/link";
+import type { ReactNode } from "react";
 
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft } from "lucide-react";
 
-import type { ShowcaseSectionEntry } from '../types';
+import type { ShowcaseSectionEntry } from "../types";
 
-import { Button } from '@/components/ui/button';
-import { ShowcaseAnchorNav } from '@/views/ShowcaseComponent/components/ShowcaseAnchorNav';
-import { ShowcaseSectionNavLink } from './ShowcaseSectionNavLink';
+import { Button } from "@/components/ui/button";
+import { ShowcaseAnchorNav } from "@/views/ShowcaseComponent/components/ShowcaseAnchorNav";
+import { ShowcaseSectionNavLink } from "./ShowcaseSectionNavLink";
 
 type ShowcaseSectionPageShellProps = {
   entry: ShowcaseSectionEntry;

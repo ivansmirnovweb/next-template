@@ -1,10 +1,10 @@
-import { HeaderActionButton } from '../HeaderActionButton';
-import { HeaderDesktopNavigation } from '../HeaderDesktopNavigation';
-import { HeaderLogoMark } from '../HeaderLogoMark';
-import { HeaderSimpleMobileMenu } from './HeaderSimpleMobileMenu';
-import type { HeaderSimpleProps } from '../types';
+import { HeaderActionButton } from "../HeaderActionButton";
+import { HeaderDesktopNavigation } from "../HeaderDesktopNavigation";
+import { HeaderLogoMark } from "../HeaderLogoMark";
+import { HeaderSimpleMobileMenu } from "./HeaderSimpleMobileMenu";
+import type { HeaderSimpleProps } from "../types";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 export const HeaderSimple = ({
   logo,
@@ -16,7 +16,7 @@ export const HeaderSimple = ({
   return (
     <header
       className={cn(
-        'border-b border-border/60 bg-background/85 backdrop-blur-xl',
+        "border-b border-border/60 bg-background/85 backdrop-blur-xl",
         className,
       )}
     >

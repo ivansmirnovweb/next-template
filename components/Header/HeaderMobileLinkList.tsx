@@ -1,8 +1,8 @@
-import Link from 'next/link';
+import Link from "next/link";
 
-import type { HeaderLinkItem } from './types';
+import type { HeaderLinkItem } from "./types";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 type HeaderMobileLinkListProps = {
   items: readonly HeaderLinkItem[];
@@ -18,8 +18,8 @@ export const HeaderMobileLinkList = ({
   return (
     <ul
       className={cn(
-        'space-y-2',
-        level > 0 && 'mt-3 border-l border-border/70 pl-4',
+        "space-y-2",
+        level > 0 && "mt-3 border-l border-border/70 pl-4",
       )}
     >
       {items.map((item) => (

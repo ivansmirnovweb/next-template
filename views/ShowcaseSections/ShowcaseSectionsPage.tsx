@@ -1,10 +1,10 @@
-import { Landmark } from 'lucide-react';
+import { Landmark } from "lucide-react";
 
-import { ShowcaseNavItem } from '@/views/ShowcaseComponents/components/ShowcaseNavItem';
+import { ShowcaseNavItem } from "@/views/ShowcaseComponents/components/ShowcaseNavItem";
 import {
   ShowcaseSection,
   showcaseSectionEntriesByGroup,
-} from '@/views/ShowcaseSection';
+} from "@/views/ShowcaseSection";
 
 export const ShowcaseSectionsPage = () => {
   return (

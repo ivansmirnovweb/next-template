@@ -1,9 +1,9 @@
-import Link from 'next/link';
+import Link from "next/link";
 
-import type { HeaderAction } from './types';
+import type { HeaderAction } from "./types";
 
-import { Button } from '@/components/ui/button';
-import { cn } from '@/lib/utils';
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 type HeaderActionButtonProps = {
   action?: HeaderAction;
@@ -21,8 +21,8 @@ export const HeaderActionButton = ({
   return (
     <Button
       asChild
-      variant={action.variant ?? 'default'}
-      className={cn('min-w-0 max-w-full', className)}
+      variant={action.variant ?? "default"}
+      className={cn("min-w-0 max-w-full", className)}
     >
       <Link href={action.href} className="truncate">
         {action.label}

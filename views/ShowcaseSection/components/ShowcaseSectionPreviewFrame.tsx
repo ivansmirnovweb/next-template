@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import type { ReactNode } from "react";
 
 type ShowcaseSectionPreviewFrameProps = {
   preview: ReactNode;
@@ -8,10 +8,10 @@ type ShowcaseSectionPreviewFrameProps = {
 };
 
 const previewShell =
-  'relative left-1/2 w-screen -translate-x-1/2 border-y border-border/70 bg-card/60 shadow-sm backdrop-blur-sm';
+  "relative left-1/2 w-screen -translate-x-1/2 border-y border-border/70 bg-card/60 shadow-sm backdrop-blur-sm";
 
 const previewBody =
-  'border-t border-border/60 bg-[radial-gradient(circle_at_top_left,_rgba(255,255,255,0.9),_transparent_34%),linear-gradient(180deg,_rgba(255,255,255,0.55),_rgba(255,255,255,0.2))] px-4 py-8 dark:bg-[radial-gradient(circle_at_top_left,_rgba(255,255,255,0.06),_transparent_34%),linear-gradient(180deg,_rgba(255,255,255,0.02),_rgba(255,255,255,0))] sm:px-6 lg:px-8';
+  "border-t border-border/60 bg-[radial-gradient(circle_at_top_left,_rgba(255,255,255,0.9),_transparent_34%),linear-gradient(180deg,_rgba(255,255,255,0.55),_rgba(255,255,255,0.2))] px-4 py-8 dark:bg-[radial-gradient(circle_at_top_left,_rgba(255,255,255,0.06),_transparent_34%),linear-gradient(180deg,_rgba(255,255,255,0.02),_rgba(255,255,255,0))] sm:px-6 lg:px-8";
 
 export const ShowcaseSectionPreviewFrame = ({
   preview,

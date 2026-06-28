@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import { useId, useState } from 'react';
+import { useId, useState } from "react";
 
-import { FieldStack } from './FieldStack';
-import { ShowcaseCard } from './ShowcaseCard';
-import { ShowcaseSection } from './ShowcaseSection';
-import { StateGrid } from './StateGrid';
-import { Label } from '@/components/ui/label';
+import { FieldStack } from "./FieldStack";
+import { ShowcaseCard } from "./ShowcaseCard";
+import { ShowcaseSection } from "./ShowcaseSection";
+import { StateGrid } from "./StateGrid";
+import { Label } from "@/components/ui/label";
 import {
   Select,
   SelectContent,
@@ -15,12 +15,12 @@ import {
   SelectLabel,
   SelectTrigger,
   SelectValue,
-} from '@/components/ui/select';
+} from "@/components/ui/select";
 
 export const SelectShowcase = () => {
-  const [selectValue, setSelectValue] = useState('pro');
-  const [compactValue, setCompactValue] = useState('anna');
-  const [popperValue, setPopperValue] = useState('backlog');
+  const [selectValue, setSelectValue] = useState("pro");
+  const [compactValue, setCompactValue] = useState("anna");
+  const [popperValue, setPopperValue] = useState("backlog");
   const selectId = useId();
   const compactSelectId = useId();
 

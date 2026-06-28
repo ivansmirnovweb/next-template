@@ -1,15 +1,15 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
+import { useState } from "react";
 
-import { ShowcaseCard } from './ShowcaseCard';
-import { ShowcaseSection } from './ShowcaseSection';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { ShowcaseCard } from "./ShowcaseCard";
+import { ShowcaseSection } from "./ShowcaseSection";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export const TabsShowcase = () => {
-  const [tabsValue, setTabsValue] = useState('tokens');
-  const [tabsLineValue, setTabsLineValue] = useState('usage');
-  const [verticalTabsValue, setVerticalTabsValue] = useState('overview');
+  const [tabsValue, setTabsValue] = useState("tokens");
+  const [tabsLineValue, setTabsLineValue] = useState("usage");
+  const [verticalTabsValue, setVerticalTabsValue] = useState("overview");
 
   return (
     <div className="space-y-8">

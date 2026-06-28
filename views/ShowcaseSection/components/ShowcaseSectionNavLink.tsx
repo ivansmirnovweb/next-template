@@ -1,15 +1,15 @@
-import Link from 'next/link';
+import Link from "next/link";
 
-import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
-import type { ShowcaseSectionEntry } from '../types';
+import type { ShowcaseSectionEntry } from "../types";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 type ShowcaseSectionNavLinkProps = {
   label: string;
   entry?: ShowcaseSectionEntry;
-  direction: 'previous' | 'next';
+  direction: "previous" | "next";
 };
 
 export const ShowcaseSectionNavLink = ({
@@ -17,14 +17,14 @@ export const ShowcaseSectionNavLink = ({
   entry,
   direction,
 }: ShowcaseSectionNavLinkProps) => {
-  const isNext = direction === 'next';
+  const isNext = direction === "next";
 
   if (!entry) {
     return (
       <div className="rounded-2xl border border-dashed border-border/70 bg-card/40 p-4 text-sm text-muted-foreground">
         {isNext
-          ? 'End of the section sequence'
-          : 'Start of the section sequence'}
+          ? "End of the section sequence"
+          : "Start of the section sequence"}
       </div>
     );
   }
@@ -36,11 +36,11 @@ export const ShowcaseSectionNavLink = ({
     >
       <div
         className={cn(
-          'flex items-center justify-end gap-4',
-          isNext ? 'flex-row' : 'flex-row-reverse',
+          "flex items-center justify-end gap-4",
+          isNext ? "flex-row" : "flex-row-reverse",
         )}
       >
-        <div className={cn('space-y-1', isNext ? 'text-right' : 'text-left')}>
+        <div className={cn("space-y-1", isNext ? "text-right" : "text-left")}>
           <p className="text-xs font-medium tracking-[0.18em] text-muted-foreground uppercase">
             {label}
           </p>

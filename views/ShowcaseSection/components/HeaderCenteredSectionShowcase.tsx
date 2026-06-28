@@ -1,33 +1,33 @@
-import { ArrowRight, Compass } from 'lucide-react';
+import { ArrowRight, Compass } from "lucide-react";
 
-import { HeaderCentered } from '@/components/Header';
-import { Button } from '@/components/ui/button';
-import { ShowcaseSectionPreviewCard } from './ShowcaseSectionPreviewCard';
-import { ShowcaseSectionPreviewFrame } from './ShowcaseSectionPreviewFrame';
+import { HeaderCentered } from "@/components/Header";
+import { Button } from "@/components/ui/button";
+import { ShowcaseSectionPreviewCard } from "./ShowcaseSectionPreviewCard";
+import { ShowcaseSectionPreviewFrame } from "./ShowcaseSectionPreviewFrame";
 
 const headerCenteredLeftNavigation = [
-  { label: 'Catalog', href: '#catalog' },
+  { label: "Catalog", href: "#catalog" },
   {
-    label: 'Collections',
-    href: '#collections',
+    label: "Collections",
+    href: "#collections",
     items: [
-      { label: 'Seasonal rotations', href: '#seasonal' },
-      { label: 'Hand-finished staples', href: '#staples' },
+      { label: "Seasonal rotations", href: "#seasonal" },
+      { label: "Hand-finished staples", href: "#staples" },
     ],
   },
 ] as const;
 
 const headerCenteredRightNavigation = [
-  { label: 'Journal', href: '#journal' },
+  { label: "Journal", href: "#journal" },
   {
-    label: 'Visits',
-    href: '#visits',
+    label: "Visits",
+    href: "#visits",
     items: [
-      { label: 'Showroom appointments', href: '#appointments' },
-      { label: 'Trade inquiries', href: '#trade' },
+      { label: "Showroom appointments", href: "#appointments" },
+      { label: "Trade inquiries", href: "#trade" },
     ],
   },
-  { label: 'Contact', href: '#contact' },
+  { label: "Contact", href: "#contact" },
 ] as const;
 
 export const HeaderCenteredSectionShowcase = () => {
@@ -41,37 +41,37 @@ export const HeaderCenteredSectionShowcase = () => {
         preview={
           <HeaderCentered
             logo={{
-              label: 'Atelier Meridian',
-              href: '#top',
-              subtitle: 'Objects, fittings, and interior studies',
+              label: "Atelier Meridian",
+              href: "#top",
+              subtitle: "Objects, fittings, and interior studies",
               icon: <Compass className="size-4" />,
             }}
             leftNavigation={headerCenteredLeftNavigation}
             rightNavigation={headerCenteredRightNavigation}
             cta={{
-              label: 'Request lookbook',
-              href: '#lookbook',
-              variant: 'secondary',
+              label: "Request lookbook",
+              href: "#lookbook",
+              variant: "secondary",
             }}
             mobileQuickAction={{
-              label: 'Call studio',
-              href: 'tel:+14155550161',
-              variant: 'outline',
+              label: "Call studio",
+              href: "tel:+14155550161",
+              variant: "outline",
             }}
             contacts={[
               {
-                label: 'Studio line',
-                value: '+1 (415) 555-0161',
-                href: 'tel:+14155550161',
+                label: "Studio line",
+                value: "+1 (415) 555-0161",
+                href: "tel:+14155550161",
               },
               {
-                label: 'Visits',
-                value: 'By appointment, Tue-Sat',
+                label: "Visits",
+                value: "By appointment, Tue-Sat",
               },
             ]}
             socialLinks={[
-              { label: 'Instagram', href: '#instagram' },
-              { label: 'Pinterest', href: '#pinterest' },
+              { label: "Instagram", href: "#instagram" },
+              { label: "Pinterest", href: "#pinterest" },
             ]}
           />
         }
@@ -86,9 +86,9 @@ export const HeaderCenteredSectionShowcase = () => {
           </div>
         }
         bullets={[
-          'Separate left and right navigation props',
-          'Centered logo as the main visual anchor',
-          'Full-screen mobile dialog with CTA and contacts',
+          "Separate left and right navigation props",
+          "Centered logo as the main visual anchor",
+          "Full-screen mobile dialog with CTA and contacts",
         ]}
       />
     </ShowcaseSectionPreviewCard>

@@ -1,6 +1,6 @@
-export { HeaderCentered } from './HeaderCentered/HeaderCentered';
-export { HeaderSimple } from './HeaderSimple/HeaderSimple';
-export { HeaderWithContacts } from './HeaderWithContacts/HeaderWithContacts';
+export { HeaderCentered } from "./HeaderCentered/HeaderCentered";
+export { HeaderSimple } from "./HeaderSimple/HeaderSimple";
+export { HeaderWithContacts } from "./HeaderWithContacts/HeaderWithContacts";
 
 export type {
   HeaderAction,
@@ -12,4 +12,4 @@ export type {
   HeaderSimpleProps,
   HeaderSocialLink,
   HeaderWithContactsProps,
-} from './types';
+} from "./types";

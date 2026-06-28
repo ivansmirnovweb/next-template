@@ -1,13 +1,13 @@
-'use client';
+"use client";
 
-import { useId, useState } from 'react';
+import { useId, useState } from "react";
 
-import { FieldStack } from './FieldStack';
-import { ShowcaseCard } from './ShowcaseCard';
-import { ShowcaseSection } from './ShowcaseSection';
-import { StateGrid } from './StateGrid';
-import { Label } from '@/components/ui/label';
-import { Switch } from '@/components/ui/switch';
+import { FieldStack } from "./FieldStack";
+import { ShowcaseCard } from "./ShowcaseCard";
+import { ShowcaseSection } from "./ShowcaseSection";
+import { StateGrid } from "./StateGrid";
+import { Label } from "@/components/ui/label";
+import { Switch } from "@/components/ui/switch";
 
 export const SwitchShowcase = () => {
   const [switchChecked, setSwitchChecked] = useState(true);

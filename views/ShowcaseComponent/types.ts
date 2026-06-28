@@ -1,10 +1,10 @@
-import type { ComponentType } from 'react';
+import type { ComponentType } from "react";
 
 export const showcaseGroups = [
-  'actions',
-  'inputs',
-  'navigation',
-  'overlays',
+  "actions",
+  "inputs",
+  "navigation",
+  "overlays",
 ] as const;
 
 export type ShowcaseGroup = (typeof showcaseGroups)[number];

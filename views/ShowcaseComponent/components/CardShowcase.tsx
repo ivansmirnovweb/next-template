@@ -1,9 +1,9 @@
-import { Type } from 'lucide-react';
+import { Type } from "lucide-react";
 
-import { ShowcaseCard } from './ShowcaseCard';
-import { ShowcaseSection } from './ShowcaseSection';
-import { StateGrid } from './StateGrid';
-import { Button } from '@/components/ui/button';
+import { ShowcaseCard } from "./ShowcaseCard";
+import { ShowcaseSection } from "./ShowcaseSection";
+import { StateGrid } from "./StateGrid";
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardAction,
@@ -12,7 +12,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from '@/components/ui/card';
+} from "@/components/ui/card";
 
 export const CardShowcase = () => {
   return (

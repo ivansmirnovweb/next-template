@@ -1,18 +1,18 @@
-import { Bell, Sparkles } from 'lucide-react';
+import { Bell, Sparkles } from "lucide-react";
 
-import { ShowcaseCard } from './ShowcaseCard';
-import { ShowcaseSection } from './ShowcaseSection';
-import { StateGrid } from './StateGrid';
-import { StateTile } from './StateTile';
-import { Badge } from '@/components/ui/badge';
+import { ShowcaseCard } from "./ShowcaseCard";
+import { ShowcaseSection } from "./ShowcaseSection";
+import { StateGrid } from "./StateGrid";
+import { StateTile } from "./StateTile";
+import { Badge } from "@/components/ui/badge";
 
 const badgeVariants = [
-  'default',
-  'secondary',
-  'destructive',
-  'outline',
-  'ghost',
-  'link',
+  "default",
+  "secondary",
+  "destructive",
+  "outline",
+  "ghost",
+  "link",
 ] as const;
 
 export const BadgeShowcase = () => {

@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { useId, useState } from 'react';
+import Link from "next/link";
+import { useId, useState } from "react";
 
-import { Menu } from 'lucide-react';
+import { Menu } from "lucide-react";
 
-import { Button } from '@/components/ui/button';
+import { Button } from "@/components/ui/button";
 import {
   Sheet,
   SheetClose,
@@ -15,14 +15,14 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from '@/components/ui/sheet';
-import { HeaderLogoMark } from '../HeaderLogoMark';
-import { HeaderMobileLinkList } from '../HeaderMobileLinkList';
-import type { HeaderSimpleProps } from '../types';
+} from "@/components/ui/sheet";
+import { HeaderLogoMark } from "../HeaderLogoMark";
+import { HeaderMobileLinkList } from "../HeaderMobileLinkList";
+import type { HeaderSimpleProps } from "../types";
 
 type HeaderSimpleMobileMenuProps = Pick<
   HeaderSimpleProps,
-  'logo' | 'navigation' | 'cta' | 'secondaryLinks'
+  "logo" | "navigation" | "cta" | "secondaryLinks"
 >;
 
 export const HeaderSimpleMobileMenu = ({
@@ -102,7 +102,7 @@ export const HeaderSimpleMobileMenu = ({
             <SheetClose asChild>
               <Button
                 asChild
-                variant={cta.variant ?? 'default'}
+                variant={cta.variant ?? "default"}
                 className="w-full"
                 onClick={closeMenu}
               >

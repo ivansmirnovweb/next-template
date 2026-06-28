@@ -1,12 +1,12 @@
-import type { Metadata } from 'next';
-import { notFound } from 'next/navigation';
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 
-import { getAdjacentComponents } from '@/views/ShowcaseComponent/helpers/getAdjacentComponents';
-import { ShowcaseComponentPage } from '@/views/ShowcaseComponent';
+import { getAdjacentComponents } from "@/views/ShowcaseComponent/helpers/getAdjacentComponents";
+import { ShowcaseComponentPage } from "@/views/ShowcaseComponent";
 import {
   showcaseEntries,
   showcaseEntryBySlug,
-} from '@/views/ShowcaseComponent/constants';
+} from "@/views/ShowcaseComponent/constants";
 
 type ShowcaseDetailPageProps = {
   params: Promise<{
@@ -26,7 +26,7 @@ export async function generateMetadata({
 
   if (!entry) {
     return {
-      title: 'Component showcase not found',
+      title: "Component showcase not found",
     };
   }
 

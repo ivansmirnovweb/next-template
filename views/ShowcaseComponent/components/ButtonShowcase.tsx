@@ -1,18 +1,18 @@
-import { ArrowRight, MousePointerClick, Sparkles } from 'lucide-react';
+import { ArrowRight, MousePointerClick, Sparkles } from "lucide-react";
 
-import { ShowcaseCard } from './ShowcaseCard';
-import { ShowcaseSection } from './ShowcaseSection';
-import { StateGrid } from './StateGrid';
-import { StateTile } from './StateTile';
-import { Button } from '@/components/ui/button';
+import { ShowcaseCard } from "./ShowcaseCard";
+import { ShowcaseSection } from "./ShowcaseSection";
+import { StateGrid } from "./StateGrid";
+import { StateTile } from "./StateTile";
+import { Button } from "@/components/ui/button";
 
 const buttonVariants = [
-  'default',
-  'outline',
-  'secondary',
-  'ghost',
-  'destructive',
-  'link',
+  "default",
+  "outline",
+  "secondary",
+  "ghost",
+  "destructive",
+  "link",
 ] as const;
 
 export const ButtonShowcase = () => {
@@ -28,7 +28,7 @@ export const ButtonShowcase = () => {
             {buttonVariants.map((variant) => (
               <StateTile key={variant} label={variant}>
                 <Button variant={variant}>
-                  {variant === 'link' ? 'Read guidelines' : 'Primary action'}
+                  {variant === "link" ? "Read guidelines" : "Primary action"}
                 </Button>
               </StateTile>
             ))}
@@ -44,14 +44,14 @@ export const ButtonShowcase = () => {
         <ShowcaseCard>
           <StateGrid columns="md:grid-cols-2">
             <StateTile label="Text sizes">
-              {(['xs', 'sm', 'default', 'lg'] as const).map((size) => (
+              {(["xs", "sm", "default", "lg"] as const).map((size) => (
                 <Button key={size} size={size}>
                   Continue
                 </Button>
               ))}
             </StateTile>
             <StateTile label="Icon sizes">
-              {(['icon-xs', 'icon-sm', 'icon', 'icon-lg'] as const).map(
+              {(["icon-xs", "icon-sm", "icon", "icon-lg"] as const).map(
                 (size) => (
                   <Button key={size} size={size} variant="outline">
                     <MousePointerClick />

@@ -1,21 +1,21 @@
-import Link from 'next/link';
+import Link from "next/link";
 
 import type {
   HeaderAction,
   HeaderCenteredProps,
   HeaderContactItem,
-} from '../types';
+} from "../types";
 
-import { Button } from '@/components/ui/button';
+import { Button } from "@/components/ui/button";
 
 type HeaderQuickActionLinkProps = {
-  item?: HeaderCenteredProps['mobileQuickAction'];
+  item?: HeaderCenteredProps["mobileQuickAction"];
 };
 
 const isContactQuickAction = (
   item: HeaderAction | HeaderContactItem,
 ): item is HeaderContactItem => {
-  return 'value' in item;
+  return "value" in item;
 };
 
 export const HeaderQuickActionLink = ({ item }: HeaderQuickActionLinkProps) => {
@@ -24,10 +24,10 @@ export const HeaderQuickActionLink = ({ item }: HeaderQuickActionLinkProps) => {
   }
 
   const label = isContactQuickAction(item) ? item.value : item.label;
-  const href = item.href ?? '#contact';
+  const href = item.href ?? "#contact";
   const variant = isContactQuickAction(item)
-    ? 'outline'
-    : (item.variant ?? 'outline');
+    ? "outline"
+    : (item.variant ?? "outline");
 
   return (
     <Button asChild variant={variant} size="sm" className="max-w-[9rem]">

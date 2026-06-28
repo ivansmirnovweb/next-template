@@ -1,4 +1,4 @@
-import { env } from '@/lib/env';
+import { env } from "@/lib/env";
 
 export type QueryParams = Record<
   string,
@@ -7,7 +7,7 @@ export type QueryParams = Record<
 
 type RequestBody = BodyInit | Record<string, unknown>;
 
-type RequestOptions = Omit<RequestInit, 'body' | 'method'> & {
+type RequestOptions = Omit<RequestInit, "body" | "method"> & {
   params?: QueryParams;
   body?: RequestBody | null;
 };
@@ -29,9 +29,9 @@ export class ApiError extends Error {
 
   constructor({ status, statusText, data }: ApiErrorDetails) {
     super(
-      `API request failed with status ${status}${statusText ? ` ${statusText}` : ''}`,
+      `API request failed with status ${status}${statusText ? ` ${statusText}` : ""}`,
     );
-    this.name = 'ApiError';
+    this.name = "ApiError";
     this.status = status;
     this.statusText = statusText;
     this.data = data;
@@ -70,8 +70,8 @@ function buildUrl(path: string, baseUrl: string, params?: QueryParams) {
   }
 
   if (baseUrl) {
-    const normalizedBaseUrl = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
-    const normalizedPath = path.replace(/^\/+/, '');
+    const normalizedBaseUrl = baseUrl.endsWith("/") ? baseUrl : `${baseUrl}/`;
+    const normalizedPath = path.replace(/^\/+/, "");
     const url = new URL(normalizedPath, normalizedBaseUrl);
 
     searchParams.forEach((value, key) => {
@@ -88,7 +88,7 @@ function buildUrl(path: string, baseUrl: string, params?: QueryParams) {
 
 function isBodyInit(body: RequestBody): body is BodyInit {
   return (
-    typeof body === 'string' ||
+    typeof body === "string" ||
     body instanceof Blob ||
     body instanceof FormData ||
     body instanceof URLSearchParams ||
@@ -106,8 +106,8 @@ function prepareBody(body: RequestBody | null | undefined, headers: Headers) {
     return body;
   }
 
-  if (!headers.has('Content-Type')) {
-    headers.set('Content-Type', 'application/json');
+  if (!headers.has("Content-Type")) {
+    headers.set("Content-Type", "application/json");
   }
 
   return JSON.stringify(body);
@@ -118,9 +118,9 @@ async function parseResponse<T>(response: Response): Promise<T> {
     return undefined as T;
   }
 
-  const contentType = response.headers.get('content-type') ?? '';
+  const contentType = response.headers.get("content-type") ?? "";
 
-  if (contentType.includes('application/json')) {
+  if (contentType.includes("application/json")) {
     return response.json() as Promise<T>;
   }
 
@@ -171,23 +171,23 @@ export function createApiClient(options: ApiClientOptions) {
 
   return {
     get<T>(path: string, options?: RequestOptions) {
-      return request<T>('GET', path, options);
+      return request<T>("GET", path, options);
     },
     post<T>(path: string, body?: RequestBody | null, options?: RequestOptions) {
-      return request<T>('POST', path, { ...options, body });
+      return request<T>("POST", path, { ...options, body });
     },
     put<T>(path: string, body?: RequestBody | null, options?: RequestOptions) {
-      return request<T>('PUT', path, { ...options, body });
+      return request<T>("PUT", path, { ...options, body });
     },
     patch<T>(
       path: string,
       body?: RequestBody | null,
       options?: RequestOptions,
     ) {
-      return request<T>('PATCH', path, { ...options, body });
+      return request<T>("PATCH", path, { ...options, body });
     },
     delete<T>(path: string, options?: RequestOptions) {
-      return request<T>('DELETE', path, options);
+      return request<T>("DELETE", path, options);
     },
   };
 }

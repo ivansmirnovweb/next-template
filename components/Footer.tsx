@@ -1,26 +1,26 @@
-import Link from 'next/link';
+import Link from "next/link";
 
-import { ArrowUpRight, Compass, HeartPulse, Layers3 } from 'lucide-react';
+import { ArrowUpRight, Compass, HeartPulse, Layers3 } from "lucide-react";
 
 const FOOTER_LINK_GROUPS = [
   {
-    title: 'Showcase',
+    title: "Showcase",
     links: [
-      { label: 'Overview', href: '/' },
-      { label: 'Components', href: '/components' },
-      { label: 'Sections', href: '/sections' },
+      { label: "Overview", href: "/" },
+      { label: "Components", href: "/components" },
+      { label: "Sections", href: "/sections" },
     ],
   },
   {
-    title: 'Template',
+    title: "Template",
     links: [
-      { label: 'API Health', href: '/api/health' },
-      { label: 'Root Redirect', href: '/' },
+      { label: "API Health", href: "/api/health" },
+      { label: "Root Redirect", href: "/" },
     ],
   },
 ] as const;
 
-const STACK_ITEMS = ['Next.js 16', 'React 19', 'Tailwind v4', 'shadcn/ui'];
+const STACK_ITEMS = ["Next.js 16", "React 19", "Tailwind v4", "shadcn/ui"];
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();

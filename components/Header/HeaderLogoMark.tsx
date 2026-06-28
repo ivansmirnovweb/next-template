@@ -1,6 +1,6 @@
-import Link from 'next/link';
+import Link from "next/link";
 
-import type { HeaderLogo } from './types';
+import type { HeaderLogo } from "./types";
 
 export const HeaderLogoMark = ({ logo }: { logo: HeaderLogo }) => {
   return (

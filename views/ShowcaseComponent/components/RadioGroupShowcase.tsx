@@ -1,16 +1,16 @@
-'use client';
+"use client";
 
-import { useId, useState } from 'react';
+import { useId, useState } from "react";
 
-import { FieldStack } from './FieldStack';
-import { ShowcaseCard } from './ShowcaseCard';
-import { ShowcaseSection } from './ShowcaseSection';
-import { StateGrid } from './StateGrid';
-import { Label } from '@/components/ui/label';
-import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
+import { FieldStack } from "./FieldStack";
+import { ShowcaseCard } from "./ShowcaseCard";
+import { ShowcaseSection } from "./ShowcaseSection";
+import { StateGrid } from "./StateGrid";
+import { Label } from "@/components/ui/label";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 
 export const RadioGroupShowcase = () => {
-  const [radioValue, setRadioValue] = useState('starter');
+  const [radioValue, setRadioValue] = useState("starter");
   const radioStarterId = useId();
   const radioGrowthId = useId();
   const radioScaleId = useId();

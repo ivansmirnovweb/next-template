@@ -1,13 +1,13 @@
-import Link from 'next/link';
+import Link from "next/link";
 
-import type { HeaderLinkItem } from './types';
+import type { HeaderLinkItem } from "./types";
 
 import {
   DropdownMenuItem,
   DropdownMenuSub,
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
-} from '@/components/ui/dropdown-menu';
+} from "@/components/ui/dropdown-menu";
 
 type HeaderDesktopNavigationMenuItemsProps = {
   items: readonly HeaderLinkItem[];

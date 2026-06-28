@@ -1,13 +1,13 @@
-import { NextResponse } from 'next/server';
+import { NextResponse } from "next/server";
 
-import { env } from '@/lib/env';
-import { Health } from '@/types/health';
+import { env } from "@/lib/env";
+import { Health } from "@/types/health";
 
 export async function GET(): Promise<NextResponse<Health>> {
   const payload: Health = {
-    appName: 'next-template',
+    appName: "next-template",
     environment: env.NODE_ENV,
-    status: 'healthy',
+    status: "healthy",
     timestamp: new Date().toISOString(),
     uptimeSeconds: Math.floor(process.uptime()),
   };

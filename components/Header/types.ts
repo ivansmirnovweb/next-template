@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import type { ReactNode } from "react";
 
 export type HeaderLinkItem = {
   label: string;
@@ -9,7 +9,7 @@ export type HeaderLinkItem = {
 export type HeaderAction = {
   label: string;
   href: string;
-  variant?: 'default' | 'outline' | 'secondary';
+  variant?: "default" | "outline" | "secondary";
 };
 
 export type HeaderSecondaryLink = {

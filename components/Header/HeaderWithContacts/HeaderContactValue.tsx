@@ -1,8 +1,8 @@
-import Link from 'next/link';
+import Link from "next/link";
 
-import type { HeaderContactItem } from '../types';
+import type { HeaderContactItem } from "../types";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 type HeaderContactValueProps = {
   item: HeaderContactItem;
@@ -27,7 +27,7 @@ export const HeaderContactValue = ({
       <Link
         href={item.href}
         className={cn(
-          'flex min-w-0 flex-col gap-1 rounded-xl px-3 py-2 transition-colors hover:bg-background/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background',
+          "flex min-w-0 flex-col gap-1 rounded-xl px-3 py-2 transition-colors hover:bg-background/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
           className,
         )}
       >
@@ -37,7 +37,7 @@ export const HeaderContactValue = ({
   }
 
   return (
-    <div className={cn('flex min-w-0 flex-col gap-1 px-3 py-2', className)}>
+    <div className={cn("flex min-w-0 flex-col gap-1 px-3 py-2", className)}>
       {content}
     </div>
   );

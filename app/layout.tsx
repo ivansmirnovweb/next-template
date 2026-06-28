@@ -1,38 +1,38 @@
-import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
-import { ReactNode } from 'react';
-import { Compass } from 'lucide-react';
+import type { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
+import { ReactNode } from "react";
+import { Compass } from "lucide-react";
 
-import Providers from './providers';
-import './globals.css';
-import { Toaster } from 'sonner';
-import { Footer } from '@/components/Footer';
-import { HeaderSimple } from '@/components/Header';
+import Providers from "./providers";
+import "./globals.css";
+import { Toaster } from "sonner";
+import { Footer } from "@/components/Footer";
+import { HeaderSimple } from "@/components/Header";
 
 const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
 });
 
 const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: 'Next Template',
+  title: "Next Template",
   description:
-    'Reusable Next.js template with SSR-safe providers and API patterns.',
+    "Reusable Next.js template with SSR-safe providers and API patterns.",
 };
 
 const layoutHeaderNavigation = [
   {
-    label: 'Components',
-    href: '/components',
+    label: "Components",
+    href: "/components",
   },
   {
-    label: 'Sections',
-    href: '/sections',
+    label: "Sections",
+    href: "/sections",
   },
 ] as const;
 
@@ -51,18 +51,18 @@ export default function RootLayout({
         <Providers>
           <HeaderSimple
             logo={{
-              label: 'Next Template',
-              href: '/',
-              subtitle: 'Reusable App Router starter',
+              label: "Next Template",
+              href: "/",
+              subtitle: "Reusable App Router starter",
               icon: <Compass className="size-4" />,
             }}
             navigation={layoutHeaderNavigation}
             cta={{
-              label: 'Browse sections',
-              href: '/sections',
-              variant: 'outline',
+              label: "Browse sections",
+              href: "/sections",
+              variant: "outline",
             }}
-            secondaryLinks={[{ label: 'Home', href: '/' }]}
+            secondaryLinks={[{ label: "Home", href: "/" }]}
           />
           <main>{children}</main>
           <Footer />

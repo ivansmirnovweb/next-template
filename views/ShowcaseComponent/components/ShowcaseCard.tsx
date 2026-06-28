@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import type { ReactNode } from "react";
 
 import {
   Card,
@@ -7,8 +7,8 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from '@/components/ui/card';
-import { cn } from '@/lib/utils';
+} from "@/components/ui/card";
+import { cn } from "@/lib/utils";
 
 type ShowcaseCardProps = {
   title?: string;
@@ -30,7 +30,7 @@ export const ShowcaseCard = ({
   return (
     <Card
       className={cn(
-        'border border-border/70 bg-card/90 shadow-sm backdrop-blur-sm',
+        "border border-border/70 bg-card/90 shadow-sm backdrop-blur-sm",
         className,
       )}
     >
@@ -40,7 +40,7 @@ export const ShowcaseCard = ({
           {description && <CardDescription>{description}</CardDescription>}
         </CardHeader>
       )}
-      <CardContent className={cn('space-y-4', hasHeader ? 'pt-5' : 'pt-6')}>
+      <CardContent className={cn("space-y-4", hasHeader ? "pt-5" : "pt-6")}>
         {children}
       </CardContent>
       {footer && <CardFooter>{footer}</CardFooter>}

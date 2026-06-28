@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import {
   ChevronDown,
@@ -6,13 +6,13 @@ import {
   PanelLeft,
   PanelRight,
   Sparkles,
-} from 'lucide-react';
+} from "lucide-react";
 
-import { ShowcaseCard } from './ShowcaseCard';
-import { ShowcaseSection } from './ShowcaseSection';
-import { StateGrid } from './StateGrid';
-import { StateTile } from './StateTile';
-import { Button } from '@/components/ui/button';
+import { ShowcaseCard } from "./ShowcaseCard";
+import { ShowcaseSection } from "./ShowcaseSection";
+import { StateGrid } from "./StateGrid";
+import { StateTile } from "./StateTile";
+import { Button } from "@/components/ui/button";
 import {
   Sheet,
   SheetContent,
@@ -21,7 +21,7 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from '@/components/ui/sheet';
+} from "@/components/ui/sheet";
 
 export const SheetShowcase = () => {
   return (

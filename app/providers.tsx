@@ -1,7 +1,7 @@
-import { ThemeProvider } from 'next-themes';
-import { ReactNode } from 'react';
+import { ThemeProvider } from "next-themes";
+import { ReactNode } from "react";
 
-import { themeValues } from '@/types/theme';
+import { themeValues } from "@/types/theme";
 
 type ProvidersProps = Readonly<{
   children: ReactNode;

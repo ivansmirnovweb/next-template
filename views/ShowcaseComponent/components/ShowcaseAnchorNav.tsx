@@ -1,5 +1,5 @@
-import type { ShowcaseAnchor } from '../types';
-import { Button } from '@/components/ui/button';
+import type { ShowcaseAnchor } from "../types";
+import { Button } from "@/components/ui/button";
 
 type ShowcaseAnchorNavProps = {
   anchors: ShowcaseAnchor[];

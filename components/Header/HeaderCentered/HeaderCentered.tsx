@@ -1,12 +1,12 @@
-import { HeaderActionButton } from '../HeaderActionButton';
-import { HeaderDesktopNavigation } from '../HeaderDesktopNavigation';
-import { HeaderLogoMark } from '../HeaderLogoMark';
-import { HeaderSocialLinkButton } from '../HeaderSocialLinkButton';
-import type { HeaderCenteredProps } from '../types';
-import { HeaderCenteredMobileMenu } from './HeaderCenteredMobileMenu';
-import { HeaderQuickActionLink } from './HeaderQuickActionLink';
-import { HeaderCompactContact } from './HeaderCompactContact';
-import { cn } from '@/lib/utils';
+import { HeaderActionButton } from "../HeaderActionButton";
+import { HeaderDesktopNavigation } from "../HeaderDesktopNavigation";
+import { HeaderLogoMark } from "../HeaderLogoMark";
+import { HeaderSocialLinkButton } from "../HeaderSocialLinkButton";
+import type { HeaderCenteredProps } from "../types";
+import { HeaderCenteredMobileMenu } from "./HeaderCenteredMobileMenu";
+import { HeaderQuickActionLink } from "./HeaderQuickActionLink";
+import { HeaderCompactContact } from "./HeaderCompactContact";
+import { cn } from "@/lib/utils";
 
 export const HeaderCentered = ({
   logo,
@@ -21,7 +21,7 @@ export const HeaderCentered = ({
   return (
     <header
       className={cn(
-        'border-b border-border/60 bg-background/88 backdrop-blur-xl',
+        "border-b border-border/60 bg-background/88 backdrop-blur-xl",
         className,
       )}
     >
