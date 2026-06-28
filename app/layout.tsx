@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import type { HeaderLinkItem } from "@/components/Header";
 import { Geist, Geist_Mono } from "next/font/google";
 import { ReactNode } from "react";
 import { Compass } from "lucide-react";
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
     "Reusable Next.js template with SSR-safe providers and API patterns.",
 };
 
-const layoutHeaderNavigation = [
+const HEADER_NAVIGATION: HeaderLinkItem[] = [
   {
     label: "Components",
     href: "/components",
@@ -34,7 +35,7 @@ const layoutHeaderNavigation = [
     label: "Sections",
     href: "/sections",
   },
-] as const;
+];
 
 export default function RootLayout({
   children,
@@ -56,7 +57,7 @@ export default function RootLayout({
               subtitle: "Reusable App Router starter",
               icon: <Compass className="size-4" />,
             }}
-            navigation={layoutHeaderNavigation}
+            navigation={HEADER_NAVIGATION}
             cta={{
               label: "Browse sections",
               href: "/sections",

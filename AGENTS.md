@@ -33,6 +33,7 @@ This version has breaking changes — APIs, conventions, and file structure may 
 - Prefer `as const` unions over `enum`.
 - Keep types close to their domain: shared types in `types/`, feature-specific types next to the feature.
 - Avoid unnecessary abstractions and over-generic helpers.
+- Public or reusable constants must use explicit types where appropriate and be named in `UPPER_SNAKE_CASE` format, for example `HEADER_NAVIGATION`.
 
 ## React
 
