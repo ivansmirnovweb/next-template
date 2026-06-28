@@ -32,7 +32,7 @@ export const Header = () => {
 
   return (
     <header className="border-b border-border/60 bg-background/85 backdrop-blur-xl">
-      <div className="mx-auto flex w-full max-w-7xl flex-col gap-4 px-4 py-4 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
+      <div className="layout-container flex flex-col gap-4 py-4 lg:flex-row lg:items-center lg:justify-between">
         <div className="flex flex-col gap-4 lg:flex-row lg:items-center">
           <Link
             href="/"

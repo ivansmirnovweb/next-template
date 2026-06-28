@@ -27,7 +27,7 @@ export const Footer = () => {
 
   return (
     <footer className="border-t border-border/60 bg-background/85 backdrop-blur-xl">
-      <div className="mx-auto grid w-full max-w-7xl gap-8 px-4 py-8 sm:px-6 md:grid-cols-[1.2fr_1fr_1fr] lg:px-8">
+      <div className="layout-container grid gap-8 py-8 md:grid-cols-[1.2fr_1fr_1fr]">
         <div className="space-y-4">
           <div className="flex items-center gap-2">
             <span className="flex size-10 items-center justify-center rounded-2xl border border-border/70 bg-card text-foreground shadow-sm">
