@@ -1,12 +1,12 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
-import { getAdjacentComponents } from '@/views/showcaseComponent/helpers/getAdjacentComponents';
-import { ShowcaseComponentPage } from '@/views/showcaseComponent';
+import { getAdjacentComponents } from '@/views/ShowcaseComponent/helpers/getAdjacentComponents';
+import { ShowcaseComponentPage } from '@/views/ShowcaseComponent';
 import {
   showcaseEntries,
   showcaseEntryBySlug,
-} from '@/views/showcaseComponent/constants';
+} from '@/views/ShowcaseComponent/constants';
 
 type ShowcaseDetailPageProps = {
   params: Promise<{

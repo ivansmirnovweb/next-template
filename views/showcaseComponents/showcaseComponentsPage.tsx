@@ -1,8 +1,8 @@
 import { Sparkles } from 'lucide-react';
 
 import { ShowcaseNavItem } from './components/ShowcaseNavItem';
-import { ShowcaseSection } from '../showcaseComponent/components/ShowcaseSection';
-import { showcaseEntriesByGroup } from '../showcaseComponent/constants';
+import { ShowcaseSection } from '../ShowcaseComponent/components/ShowcaseSection';
+import { showcaseEntriesByGroup } from '../ShowcaseComponent/constants';
 
 export const ShowcaseComponentsPage = () => {
   return (
