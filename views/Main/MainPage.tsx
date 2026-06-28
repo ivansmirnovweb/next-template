@@ -22,20 +22,20 @@ export const MainPage = () => {
 
           <div className="space-y-4">
             <h1 className="font-heading text-4xl leading-[0.95] font-medium tracking-tight text-foreground sm:text-6xl lg:text-7xl">
-              Шаблон для Next.js проекта
+              Next.js project template
             </h1>
             <p className="max-w-2xl text-base leading-7 text-muted-foreground sm:text-lg">
-              Аккуратная оболочка для App Router, UI-примитивов, темы и базовых
-              экранов проекта.
+              A clean shell for App Router, UI primitives, theming, and the
+              project is core screens.
             </p>
           </div>
 
           <div className="flex flex-wrap items-center gap-3">
             <Button asChild size="lg">
-              <Link href="/components">Открыть UI</Link>
+              <Link href="/components">Open UI</Link>
             </Button>
             <Button asChild variant="outline" size="lg">
-              <Link href="/sections">Смотреть секции</Link>
+              <Link href="/sections">Browse sections</Link>
             </Button>
           </div>
 
@@ -56,10 +56,10 @@ export const MainPage = () => {
             <div className="space-y-4">
               <div className="space-y-1">
                 <p className="text-xs font-medium tracking-[0.2em] text-muted-foreground uppercase">
-                  Что здесь есть
+                  What is inside
                 </p>
                 <p className="font-heading text-2xl font-medium text-foreground">
-                  Чистый шаблон для старта
+                  A clean starting template
                 </p>
               </div>
 

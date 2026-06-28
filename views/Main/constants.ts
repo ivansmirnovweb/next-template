@@ -8,17 +8,17 @@ export const HIGHLIGHTS: string[] = [
 
 export const FEATURES: Feature[] = [
   {
-    title: 'База для приложения',
-    description: 'Стартовая точка без лишней архитектурной нагрузки.',
+    title: 'App foundation',
+    description: 'A starting point without unnecessary architectural weight.',
   },
   {
-    title: 'Единый визуальный стиль',
+    title: 'Unified visual style',
     description:
-      'Те же карточки, бордюры и типографика, что и на остальном сайте.',
+      'The same cards, borders, and typography used across the rest of the site.',
   },
   {
-    title: 'Готово к расширению',
+    title: 'Ready to scale',
     description:
-      'Можно заменить этот экран на продуктовый контент без переделки основы.',
+      'You can replace this screen with product content without reworking the base.',
   },
 ];
