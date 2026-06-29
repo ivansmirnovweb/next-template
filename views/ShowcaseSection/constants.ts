@@ -1,3 +1,6 @@
+import { FooterColumnsSectionShowcase } from "./components/FooterColumnsSectionShowcase";
+import { FooterSimpleSectionShowcase } from "./components/FooterSimpleSectionShowcase";
+import { FooterWithContactsSectionShowcase } from "./components/FooterWithContactsSectionShowcase";
 import { HeaderCenteredSectionShowcase } from "./components/HeaderCenteredSectionShowcase";
 import { HeaderSimpleSectionShowcase } from "./components/HeaderSimpleSectionShowcase";
 import { HeaderWithContactsSectionShowcase } from "./components/HeaderWithContactsSectionShowcase";
@@ -28,6 +31,30 @@ export const showcaseSectionEntries: ShowcaseSectionEntry[] = [
     group: "headers",
     Component: HeaderCenteredSectionShowcase,
   },
+  {
+    slug: "footer-simple",
+    title: "FooterSimple",
+    description:
+      "Compact footer with brand, short navigation, social links, and a legal row.",
+    group: "footers",
+    Component: FooterSimpleSectionShowcase,
+  },
+  {
+    slug: "footer-columns",
+    title: "FooterColumns",
+    description:
+      "Navigation-heavy footer with dynamic link groups, contacts, and mobile accordions.",
+    group: "footers",
+    Component: FooterColumnsSectionShowcase,
+  },
+  {
+    slug: "footer-with-contacts",
+    title: "FooterWithContacts",
+    description:
+      "Contact-first footer that prioritizes direct outreach, hours, and a final CTA.",
+    group: "footers",
+    Component: FooterWithContactsSectionShowcase,
+  },
 ];
 
 export const showcaseSectionEntryBySlug: Record<string, ShowcaseSectionEntry> =
@@ -44,5 +71,6 @@ export const showcaseSectionEntriesByGroup = showcaseSectionEntries.reduce<
   },
   {
     headers: [],
+    footers: [],
   },
 );

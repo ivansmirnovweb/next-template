@@ -19,34 +19,33 @@ test("renders section catalog, opens a detail page, and verifies mobile menu", a
   await expect(
     page.getByRole("heading", { name: "HeaderCentered" }),
   ).toBeVisible();
-
-  await page
-    .getByRole("link", { name: /open detail page/i })
-    .first()
-    .click();
-
-  await expect(page).toHaveURL(/\/sections\/header-simple$/);
   await expect(
-    page.getByRole("heading", { name: "HeaderSimple" }),
+    page.getByRole("heading", { name: "FooterSimple" }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: "FooterColumns" }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: "FooterWithContacts" }),
+  ).toBeVisible();
+
+  await page.getByRole("link", { name: /FooterColumns/i }).click();
+
+  await expect(page).toHaveURL(/\/sections\/footer-columns$/);
+  await expect(
+    page.getByRole("heading", { name: "FooterColumns" }),
   ).toBeVisible();
 
   await page.setViewportSize({ width: 390, height: 844 });
 
-  await page
-    .getByRole("button", { name: /open navigation menu/i })
-    .nth(1)
-    .click();
+  const resourcesTrigger = page.getByRole("button", { name: "Resources" });
 
-  await expect(
-    page.getByRole("link", { name: /book walkthrough/i }).last(),
-  ).toBeVisible();
-  await expect(
-    page.getByRole("link", { name: /support orchestration/i }),
-  ).toBeVisible();
+  await resourcesTrigger.click();
 
-  await page.keyboard.press("Escape");
+  await expect(resourcesTrigger).toHaveAttribute("aria-expanded", "true");
+  await expect(page.getByRole("link", { name: "Documentation" })).toBeVisible();
 
-  await expect(
-    page.getByRole("link", { name: /book walkthrough/i }),
-  ).not.toBeVisible();
+  await resourcesTrigger.click();
+
+  await expect(resourcesTrigger).toHaveAttribute("aria-expanded", "false");
 });
