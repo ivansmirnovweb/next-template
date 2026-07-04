@@ -13,7 +13,7 @@ const badgeVariants = [
   "outline",
   "ghost",
   "link",
-];
+] as const;
 
 export const BadgeShowcase = () => {
   return (
