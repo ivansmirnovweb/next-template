@@ -1,9 +1,10 @@
 import { NextResponse } from "next/server";
 
 import { env } from "@/lib/env";
+import type { ApiResponse } from "@/types/api";
 import { Health } from "@/types/health";
 
-export async function GET(): Promise<NextResponse<Health>> {
+export async function GET(): Promise<NextResponse<ApiResponse<Health>>> {
   const payload: Health = {
     appName: "next-template",
     environment: env.NODE_ENV,
@@ -12,5 +13,11 @@ export async function GET(): Promise<NextResponse<Health>> {
     uptimeSeconds: Math.floor(process.uptime()),
   };
 
-  return NextResponse.json(payload, { status: 200 });
+  return NextResponse.json(
+    {
+      success: true,
+      data: payload,
+    },
+    { status: 200 },
+  );
 }

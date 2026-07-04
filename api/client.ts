@@ -1,26 +1,11 @@
 import { env } from "@/lib/env";
-
-export type QueryParams = Record<
-  string,
-  string | number | boolean | null | undefined
->;
-
-type RequestBody = BodyInit | Record<string, unknown>;
-
-type RequestOptions = Omit<RequestInit, "body" | "method"> & {
-  params?: QueryParams;
-  body?: RequestBody | null;
-};
-
-type ApiClientOptions = {
-  baseUrl: string;
-};
-
-type ApiErrorDetails = {
-  status: number;
-  statusText: string;
-  data?: unknown;
-};
+import type {
+  ApiClientOptions,
+  ApiErrorDetails,
+  QueryParams,
+  RequestBody,
+  RequestOptions,
+} from "@/types/api";
 
 export class ApiError extends Error {
   status: number;
@@ -193,5 +178,5 @@ export function createApiClient(options: ApiClientOptions) {
 }
 
 export const api = createApiClient({
-  baseUrl: env.API_URL || env.NEXT_PUBLIC_API_URL,
+  baseUrl: env.NEXT_PUBLIC_API_URL,
 });

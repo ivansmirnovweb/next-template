@@ -57,6 +57,7 @@ export const showcaseEntries: ShowcaseEntry[] = [
     Component: TextareaShowcase,
     anchors: [{ id: "textarea-states", label: "Textarea states" }],
   },
+
   {
     slug: "checkbox",
     title: "Checkbox",

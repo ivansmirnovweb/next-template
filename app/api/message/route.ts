@@ -1,8 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 
+import type { ApiResponse } from "@/types/api";
 import { Message } from "@/types/message";
 
-export async function GET(): Promise<NextResponse<Message[]>> {
+export async function GET(): Promise<NextResponse<ApiResponse<Message[]>>> {
   const payload: Message[] = [
     {
       id: "1",
@@ -18,12 +19,18 @@ export async function GET(): Promise<NextResponse<Message[]>> {
     },
   ];
 
-  return NextResponse.json(payload, { status: 200 });
+  return NextResponse.json(
+    {
+      success: true,
+      data: payload,
+    },
+    { status: 200 },
+  );
 }
 
 export async function POST(
   request: NextRequest,
-): Promise<NextResponse<Message>> {
+): Promise<NextResponse<ApiResponse<Message>>> {
   const { text }: Pick<Message, "text"> = await request.json();
 
   const payload: Message = {
@@ -31,5 +38,11 @@ export async function POST(
     text,
   };
 
-  return NextResponse.json(payload, { status: 200 });
+  return NextResponse.json(
+    {
+      success: true,
+      data: payload,
+    },
+    { status: 200 },
+  );
 }
