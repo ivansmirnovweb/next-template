@@ -58,7 +58,7 @@ export const FooterWithContacts = ({
             <section className="space-y-6">
               <FooterLogoMark logo={logo} />
 
-              {contactItems.length ? (
+              {contactItems.length && (
                 <div className="rounded-3xl border border-border/60 bg-background/75 p-4 sm:p-5">
                   <FooterContactList
                     items={contactItems}
@@ -66,15 +66,15 @@ export const FooterWithContacts = ({
                     className="gap-4 sm:grid-cols-2"
                   />
                 </div>
-              ) : null}
+              )}
 
-              {description ? (
+              {description && (
                 <p className="max-w-2xl text-sm leading-6 text-muted-foreground sm:text-base">
                   {description}
                 </p>
-              ) : null}
+              )}
 
-              {hasAction || hasSocialLinks ? (
+              {(hasAction || hasSocialLinks) && (
                 <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
                   <FooterActionButton
                     action={cta}
@@ -85,10 +85,10 @@ export const FooterWithContacts = ({
                     className="w-full sm:w-auto"
                   />
                 </div>
-              ) : null}
+              )}
             </section>
 
-            {hasNavigation ? (
+            {hasNavigation && (
               <nav aria-label="Footer navigation" className="space-y-4">
                 <h2 className="text-xs font-medium tracking-[0.18em] text-muted-foreground uppercase">
                   Navigation
@@ -98,7 +98,7 @@ export const FooterWithContacts = ({
                   className="flex-col gap-3"
                 />
               </nav>
-            ) : null}
+            )}
           </div>
 
           <FooterBottomBar

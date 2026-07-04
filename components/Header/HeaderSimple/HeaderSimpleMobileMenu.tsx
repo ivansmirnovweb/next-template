@@ -70,7 +70,7 @@ export const HeaderSimpleMobileMenu = ({
             <HeaderMobileLinkList items={navigation} onSelect={closeMenu} />
           </nav>
 
-          {secondaryLinks?.length ? (
+          {secondaryLinks?.length && (
             <section className="space-y-3">
               <p className="text-xs font-medium tracking-[0.18em] text-muted-foreground uppercase">
                 More
@@ -94,10 +94,10 @@ export const HeaderSimpleMobileMenu = ({
                 ))}
               </ul>
             </section>
-          ) : null}
+          )}
         </div>
 
-        {cta ? (
+        {cta && (
           <SheetFooter className="border-t border-border/60 bg-background/80">
             <SheetClose asChild>
               <Button
@@ -110,7 +110,7 @@ export const HeaderSimpleMobileMenu = ({
               </Button>
             </SheetClose>
           </SheetFooter>
-        ) : null}
+        )}
       </SheetContent>
     </Sheet>
   );

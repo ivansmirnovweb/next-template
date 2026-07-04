@@ -122,7 +122,7 @@ export const HeaderCenteredMobileMenu = ({
                 )}
               </div>
 
-              {socialLinks?.length ? (
+              {socialLinks?.length && (
                 <div className="flex flex-wrap gap-2">
                   {socialLinks.map((social) => (
                     <DialogClose key={`${social.href}-${social.label}`} asChild>
@@ -140,11 +140,11 @@ export const HeaderCenteredMobileMenu = ({
                     </DialogClose>
                   ))}
                 </div>
-              ) : null}
+              )}
             </section>
           )}
 
-          {cta ? (
+          {cta && (
             <div className="mt-6 border-t border-border/60 pt-5">
               <DialogClose asChild>
                 <Button
@@ -157,7 +157,7 @@ export const HeaderCenteredMobileMenu = ({
                 </Button>
               </DialogClose>
             </div>
-          ) : null}
+          )}
         </div>
       </DialogContent>
     </Dialog>

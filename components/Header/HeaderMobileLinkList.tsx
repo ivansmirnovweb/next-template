@@ -5,7 +5,7 @@ import type { HeaderLinkItem } from "./types";
 import { cn } from "@/lib/utils";
 
 type HeaderMobileLinkListProps = {
-  items: readonly HeaderLinkItem[];
+  items: HeaderLinkItem[];
   onSelect?: () => void;
   level?: number;
 };
@@ -31,13 +31,13 @@ export const HeaderMobileLinkList = ({
           >
             <span className="block break-words">{item.label}</span>
           </Link>
-          {item.items?.length ? (
+          {item.items?.length && (
             <HeaderMobileLinkList
               items={item.items}
               onSelect={onSelect}
               level={level + 1}
             />
-          ) : null}
+          )}
         </li>
       ))}
     </ul>

@@ -7,7 +7,7 @@ export type FooterLinkItem = {
 
 export type FooterLinkGroup = {
   title: string;
-  links: readonly FooterLinkItem[];
+  links: FooterLinkItem[];
 };
 
 export type FooterLogo = {
@@ -42,21 +42,21 @@ export type FooterAction = {
 
 export type FooterSimpleProps = {
   logo: FooterLogo;
-  navigation?: readonly FooterLinkItem[];
-  socialLinks?: readonly FooterSocialLink[];
+  navigation?: FooterLinkItem[];
+  socialLinks?: FooterSocialLink[];
   copyright: string;
-  legalLinks?: readonly FooterLegalLink[];
+  legalLinks?: FooterLegalLink[];
   className?: string;
 };
 
 export type FooterColumnsProps = {
   logo: FooterLogo;
   description?: string;
-  groups: readonly FooterLinkGroup[];
-  contacts?: readonly FooterContactItem[];
-  socialLinks?: readonly FooterSocialLink[];
+  groups: FooterLinkGroup[];
+  contacts?: FooterContactItem[];
+  socialLinks?: FooterSocialLink[];
   copyright: string;
-  legalLinks?: readonly FooterLegalLink[];
+  legalLinks?: FooterLegalLink[];
   bottomNote?: string;
   className?: string;
 };
@@ -64,15 +64,15 @@ export type FooterColumnsProps = {
 export type FooterWithContactsProps = {
   logo: FooterLogo;
   description?: string;
-  navigation?: readonly FooterLinkItem[];
+  navigation?: FooterLinkItem[];
   phone?: FooterContactItem;
   email?: FooterContactItem;
   address?: FooterContactItem;
   hours?: FooterContactItem;
-  socialLinks?: readonly FooterSocialLink[];
+  socialLinks?: FooterSocialLink[];
   cta?: FooterAction;
   copyright: string;
-  legalLinks?: readonly FooterLegalLink[];
+  legalLinks?: FooterLegalLink[];
   supplementaryText?: string;
   className?: string;
 };

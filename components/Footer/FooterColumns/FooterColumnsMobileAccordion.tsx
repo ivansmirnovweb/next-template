@@ -13,7 +13,7 @@ import { cn } from "@/lib/utils";
 import { FooterLinkList } from "../FooterLinkList";
 
 type FooterColumnsMobileAccordionProps = {
-  groups: readonly FooterLinkGroup[];
+  groups: FooterLinkGroup[];
   className?: string;
 };
 

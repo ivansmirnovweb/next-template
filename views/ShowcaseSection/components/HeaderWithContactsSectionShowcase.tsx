@@ -17,7 +17,7 @@ const headerWithContactsNavigation = [
   },
   { label: "Insurance", href: "#insurance" },
   { label: "About team", href: "#team" },
-] as const;
+];
 
 export const HeaderWithContactsSectionShowcase = () => {
   return (

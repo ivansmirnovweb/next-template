@@ -4,7 +4,7 @@ import type { FooterLinkItem } from "./types";
 import { cn } from "@/lib/utils";
 
 type FooterLinkListProps = {
-  links: readonly FooterLinkItem[];
+  links: FooterLinkItem[];
   className?: string;
   listClassName?: string;
   itemClassName?: string;

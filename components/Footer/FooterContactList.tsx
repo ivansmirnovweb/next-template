@@ -4,7 +4,7 @@ import type { FooterContactItem } from "./types";
 import { cn } from "@/lib/utils";
 
 type FooterContactListProps = {
-  items: readonly FooterContactItem[];
+  items: FooterContactItem[];
   className?: string;
   emphasize?: boolean;
 };

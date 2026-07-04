@@ -14,6 +14,8 @@ const buttonVariants = [
   "destructive",
   "link",
 ] as const;
+const buttonSizes = ["xs", "sm", "default", "lg"] as const;
+const buttonIconSizes = ["icon-xs", "icon-sm", "icon", "icon-lg"] as const;
 
 export const ButtonShowcase = () => {
   return (
@@ -44,20 +46,18 @@ export const ButtonShowcase = () => {
         <ShowcaseCard>
           <StateGrid columns="md:grid-cols-2">
             <StateTile label="Text sizes">
-              {(["xs", "sm", "default", "lg"] as const).map((size) => (
+              {buttonSizes.map((size) => (
                 <Button key={size} size={size}>
                   Continue
                 </Button>
               ))}
             </StateTile>
             <StateTile label="Icon sizes">
-              {(["icon-xs", "icon-sm", "icon", "icon-lg"] as const).map(
-                (size) => (
-                  <Button key={size} size={size} variant="outline">
-                    <MousePointerClick />
-                  </Button>
-                ),
-              )}
+              {buttonIconSizes.map((size) => (
+                <Button key={size} size={size} variant="outline">
+                  <MousePointerClick />
+                </Button>
+              ))}
             </StateTile>
             <StateTile label="With icon">
               <Button>

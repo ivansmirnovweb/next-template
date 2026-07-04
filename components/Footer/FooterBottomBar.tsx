@@ -23,12 +23,10 @@ export const FooterBottomBar = ({
       )}
     >
       <div className="min-w-0">{leading}</div>
-      {center ? (
+      {center && (
         <div className="min-w-0 lg:flex-1 lg:justify-center">{center}</div>
-      ) : null}
-      {trailing ? (
-        <div className="min-w-0 lg:text-right">{trailing}</div>
-      ) : null}
+      )}
+      {trailing && <div className="min-w-0 lg:text-right">{trailing}</div>}
     </div>
   );
 };

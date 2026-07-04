@@ -14,7 +14,7 @@ import {
 import { cn } from "@/lib/utils";
 
 type HeaderDesktopNavigationProps = {
-  items: readonly HeaderLinkItem[];
+  items: HeaderLinkItem[];
   ariaLabel: string;
   align?: "start" | "center" | "end";
   listClassName?: string;

@@ -30,7 +30,7 @@ export const FooterSimple = ({
               <FooterLogoMark logo={logo} />
             </div>
 
-            {hasNavigation ? (
+            {hasNavigation && (
               <nav
                 aria-label="Footer navigation"
                 className="min-w-0 lg:justify-self-center"
@@ -41,15 +41,15 @@ export const FooterSimple = ({
                   itemClassName="whitespace-normal"
                 />
               </nav>
-            ) : null}
+            )}
 
-            {hasSocialLinks ? (
+            {hasSocialLinks && (
               <FooterSocialLinks
                 items={socialLinks ?? []}
                 className="lg:justify-self-end"
                 variant="ghost"
               />
-            ) : null}
+            )}
           </div>
 
           <FooterBottomBar

@@ -69,8 +69,8 @@ export const HeaderWithContacts = ({
 
         <div className="mt-3 hidden items-start justify-between gap-3 border-t border-border/60 pt-3 xl:flex">
           <div className="grid min-w-0 flex-1 gap-2 md:grid-cols-2">
-            {address ? <HeaderContactValue item={address} /> : null}
-            {hours ? <HeaderContactValue item={hours} /> : null}
+            {address && <HeaderContactValue item={address} />}
+            {hours && <HeaderContactValue item={hours} />}
           </div>
 
           <div className="flex min-w-0 shrink-0 items-center gap-2">

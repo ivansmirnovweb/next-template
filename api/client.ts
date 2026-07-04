@@ -23,9 +23,9 @@ type ApiErrorDetails = {
 };
 
 export class ApiError extends Error {
-  readonly status: number;
-  readonly statusText: string;
-  readonly data?: unknown;
+  status: number;
+  statusText: string;
+  data?: unknown;
 
   constructor({ status, statusText, data }: ApiErrorDetails) {
     super(

@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 export type HeaderLinkItem = {
   label: string;
   href: string;
-  items?: readonly HeaderLinkItem[];
+  items?: HeaderLinkItem[];
 };
 
 export type HeaderAction = {
@@ -38,30 +38,30 @@ export type HeaderSocialLink = {
 
 export type HeaderSimpleProps = {
   logo: HeaderLogo;
-  navigation: readonly HeaderLinkItem[];
+  navigation: HeaderLinkItem[];
   cta?: HeaderAction;
-  secondaryLinks?: readonly HeaderSecondaryLink[];
+  secondaryLinks?: HeaderSecondaryLink[];
   className?: string;
 };
 
 export type HeaderWithContactsProps = {
   logo: HeaderLogo;
-  navigation: readonly HeaderLinkItem[];
+  navigation: HeaderLinkItem[];
   cta?: HeaderAction;
   phone: HeaderContactItem;
   address?: HeaderContactItem;
   hours?: HeaderContactItem;
-  socialLinks?: readonly HeaderSocialLink[];
+  socialLinks?: HeaderSocialLink[];
   className?: string;
 };
 
 export type HeaderCenteredProps = {
   logo: HeaderLogo;
-  leftNavigation: readonly HeaderLinkItem[];
-  rightNavigation: readonly HeaderLinkItem[];
+  leftNavigation: HeaderLinkItem[];
+  rightNavigation: HeaderLinkItem[];
   cta?: HeaderAction;
   mobileQuickAction?: HeaderAction | HeaderContactItem;
-  contacts?: readonly HeaderContactItem[];
-  socialLinks?: readonly HeaderSocialLink[];
+  contacts?: HeaderContactItem[];
+  socialLinks?: HeaderSocialLink[];
   className?: string;
 };

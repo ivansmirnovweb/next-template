@@ -29,7 +29,7 @@ const footerColumnsGroups = [
       { label: "Security", href: "#security" },
     ],
   },
-] as const;
+];
 
 export const FooterColumnsSectionShowcase = () => {
   return (

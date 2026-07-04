@@ -20,7 +20,7 @@ const headerSimpleNavigation = [
   },
   { label: "Pricing", href: "#pricing" },
   { label: "Case studies", href: "#cases" },
-] as const;
+];
 
 export const HeaderSimpleSectionShowcase = () => {
   return (

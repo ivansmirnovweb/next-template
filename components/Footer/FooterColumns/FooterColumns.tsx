@@ -38,11 +38,11 @@ export const FooterColumns = ({
         <div className="grid gap-10 min-[1120px]:grid-cols-[minmax(0,1.1fr)_minmax(0,1.4fr)_minmax(280px,0.9fr)] min-[1120px]:items-start">
           <div className="space-y-4 min-[1120px]:max-w-xl">
             <FooterLogoMark logo={logo} />
-            {description ? (
+            {description && (
               <p className="max-w-2xl text-sm leading-6 text-muted-foreground sm:text-base sm:leading-7">
                 {description}
               </p>
-            ) : null}
+            )}
           </div>
 
           {hasGroups ? (
@@ -90,7 +90,7 @@ export const FooterColumns = ({
           )}
 
           <aside className="hidden space-y-6 rounded-3xl border border-border/60 bg-card/70 p-5 shadow-sm backdrop-blur-sm min-[1120px]:flex min-[1120px]:flex-col">
-            {hasContacts ? (
+            {hasContacts && (
               <section aria-label="Footer contacts" className="space-y-3">
                 <h2 className="text-xs font-medium tracking-[0.18em] text-muted-foreground uppercase">
                   Contacts
@@ -101,9 +101,9 @@ export const FooterColumns = ({
                   className="gap-4"
                 />
               </section>
-            ) : null}
+            )}
 
-            {hasSocialLinks ? (
+            {hasSocialLinks && (
               <section aria-label="Footer social links" className="space-y-3">
                 <h2 className="text-xs font-medium tracking-[0.18em] text-muted-foreground uppercase">
                   Social
@@ -113,22 +113,20 @@ export const FooterColumns = ({
                   className="justify-start"
                 />
               </section>
-            ) : null}
+            )}
           </aside>
         </div>
-
-        {hasGroups ? (
+        {hasGroups && (
           <div className="mt-8 min-[1120px]:hidden">
             <nav aria-label="Footer navigation">
               <FooterColumnsMobileAccordion groups={visibleGroups} />
             </nav>
           </div>
-        ) : null}
-
-        {hasContacts || hasSocialLinks ? (
+        )}
+        {(hasContacts || hasSocialLinks) && (
           <div className="mt-6 min-[1120px]:hidden">
             <div className="space-y-6 rounded-3xl border border-border/60 bg-card/70 p-5 shadow-sm backdrop-blur-sm">
-              {hasContacts ? (
+              {hasContacts && (
                 <section aria-label="Footer contacts" className="space-y-3">
                   <h2 className="text-xs font-medium tracking-[0.18em] text-muted-foreground uppercase">
                     Contacts
@@ -139,9 +137,9 @@ export const FooterColumns = ({
                     className="gap-4"
                   />
                 </section>
-              ) : null}
+              )}
 
-              {hasSocialLinks ? (
+              {hasSocialLinks && (
                 <section aria-label="Footer social links" className="space-y-3">
                   <h2 className="text-xs font-medium tracking-[0.18em] text-muted-foreground uppercase">
                     Social
@@ -151,11 +149,10 @@ export const FooterColumns = ({
                     className="justify-start"
                   />
                 </section>
-              ) : null}
+              )}
             </div>
           </div>
-        ) : null}
-
+        )}
         <FooterBottomBar
           className="mt-10"
           leading={<span>{copyright}</span>}

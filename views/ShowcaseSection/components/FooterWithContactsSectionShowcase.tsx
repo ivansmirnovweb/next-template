@@ -8,7 +8,7 @@ const footerWithContactsNavigation = [
   { label: "Programs", href: "#programs" },
   { label: "Pricing", href: "#pricing" },
   { label: "FAQ", href: "#faq" },
-] as const;
+];
 
 export const FooterWithContactsSectionShowcase = () => {
   return (

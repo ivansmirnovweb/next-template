@@ -1,11 +1,7 @@
 import type { FooterLegalLink } from "./types";
 import { FooterLinkList } from "./FooterLinkList";
 
-export const FooterLegalLinks = ({
-  links,
-}: {
-  links: readonly FooterLegalLink[];
-}) => {
+export const FooterLegalLinks = ({ links }: { links: FooterLegalLink[] }) => {
   return (
     <FooterLinkList
       links={links}

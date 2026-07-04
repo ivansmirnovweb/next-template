@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 type FooterSocialLinksProps = {
-  items: readonly FooterSocialLink[];
+  items: FooterSocialLink[];
   className?: string;
   variant?: "ghost" | "outline";
 };

@@ -3,9 +3,9 @@ import { ReactNode } from "react";
 
 import { themeValues } from "@/types/theme";
 
-type ProvidersProps = Readonly<{
+type ProvidersProps = {
   children: ReactNode;
-}>;
+};
 
 export default function Providers({ children }: ProvidersProps) {
   return (

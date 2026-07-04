@@ -26,7 +26,7 @@ const navigation = [
       { label: "Knowledge routing", href: "/solutions/knowledge" },
     ],
   },
-] as const;
+];
 
 describe("Header variants", () => {
   it("opens and closes HeaderSimple mobile menu with aria updates and nested items", async () => {

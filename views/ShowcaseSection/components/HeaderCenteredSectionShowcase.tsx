@@ -14,7 +14,7 @@ const headerCenteredLeftNavigation = [
       { label: "Hand-finished staples", href: "#staples" },
     ],
   },
-] as const;
+];
 
 const headerCenteredRightNavigation = [
   { label: "Journal", href: "#journal" },
@@ -27,7 +27,7 @@ const headerCenteredRightNavigation = [
     ],
   },
   { label: "Contact", href: "#contact" },
-] as const;
+];
 
 export const HeaderCenteredSectionShowcase = () => {
   return (

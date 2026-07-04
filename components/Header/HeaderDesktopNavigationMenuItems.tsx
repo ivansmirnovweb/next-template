@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 type HeaderDesktopNavigationMenuItemsProps = {
-  items: readonly HeaderLinkItem[];
+  items: HeaderLinkItem[];
 };
 
 export const HeaderDesktopNavigationMenuItems = ({

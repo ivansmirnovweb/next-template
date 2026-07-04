@@ -8,19 +8,19 @@ const footerSimpleNavigation = [
   { label: "Services", href: "#services" },
   { label: "Pricing with longer navigation label", href: "#pricing" },
   { label: "Case studies", href: "#cases" },
-] as const;
+];
 
 const footerSimpleSocialLinks = [
   { label: "LinkedIn", href: "#linkedin" },
   { label: "X", href: "#x" },
   { label: "GitHub", href: "#github" },
-] as const;
+];
 
 const footerSimpleLegalLinks = [
   { label: "Privacy policy", href: "#privacy" },
   { label: "Terms", href: "#terms" },
   { label: "Cookie settings", href: "#cookies" },
-] as const;
+];
 
 export const FooterSimpleSectionShowcase = () => {
   return (

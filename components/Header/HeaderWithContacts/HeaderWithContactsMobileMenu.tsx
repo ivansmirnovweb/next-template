@@ -72,15 +72,15 @@ export const HeaderWithContactsMobileMenu = ({
         <div className="flex-1 space-y-6 overflow-y-auto px-4 py-5">
           <div className="grid gap-3">
             <HeaderContactRow item={phone} />
-            {address ? <HeaderContactRow item={address} /> : null}
-            {hours ? <HeaderContactRow item={hours} /> : null}
+            {address && <HeaderContactRow item={address} />}
+            {hours && <HeaderContactRow item={hours} />}
           </div>
 
           <nav aria-label="Mobile navigation">
             <HeaderMobileLinkList items={navigation} onSelect={closeMenu} />
           </nav>
 
-          {socialLinks?.length ? (
+          {socialLinks?.length && (
             <section className="space-y-3">
               <p className="text-xs font-medium tracking-[0.18em] text-muted-foreground uppercase">
                 Мессенджеры
@@ -96,9 +96,9 @@ export const HeaderWithContactsMobileMenu = ({
                 ))}
               </div>
             </section>
-          ) : null}
+          )}
 
-          {cta ? (
+          {cta && (
             <SheetClose asChild>
               <Button
                 asChild
@@ -109,7 +109,7 @@ export const HeaderWithContactsMobileMenu = ({
                 <Link href={cta.href}>{cta.label}</Link>
               </Button>
             </SheetClose>
-          ) : null}
+          )}
         </div>
       </SheetContent>
     </Sheet>

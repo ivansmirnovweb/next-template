@@ -1,6 +1,6 @@
 import type { LucideIcon } from "lucide-react";
 
-export const themeValues = ["light", "dark", "system"] as const;
+export const themeValues = ["light", "dark", "system"];
 
 export type ThemeValue = (typeof themeValues)[number];
 

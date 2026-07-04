@@ -46,7 +46,7 @@ export const HeaderCentered = ({
               align="end"
               listClassName="justify-end"
             />
-            {cta ? <HeaderActionButton action={cta} /> : null}
+            {cta && <HeaderActionButton action={cta} />}
           </div>
         </div>
 

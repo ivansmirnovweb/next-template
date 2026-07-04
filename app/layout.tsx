@@ -71,11 +71,7 @@ const FOOTER_SOCIAL_LINKS: FooterSocialLink[] = [
   },
 ];
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html
       lang="en"
