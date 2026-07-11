@@ -10,6 +10,19 @@ test("renders the showcase catalog and navigates to a detail page", async ({
   ).toBeVisible();
   await expect(page.getByRole("heading", { name: "Button" })).toBeVisible();
 
+  const leadFormLink = page.getByRole("link", { name: /leadform/i });
+
+  await expect(leadFormLink).toBeVisible();
+  await leadFormLink.click();
+
+  await expect(page).toHaveURL(/\/components\/lead-form$/);
+  await expect(page.getByRole("heading", { name: "LeadForm" })).toBeVisible();
+  await expect(
+    page.getByRole("button", { name: /send request/i }),
+  ).toBeVisible();
+
+  await page.goto("/components");
+
   await page
     .getByRole("link", { name: /open detail page/i })
     .first()

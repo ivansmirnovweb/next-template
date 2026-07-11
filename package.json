@@ -10,7 +10,6 @@
     "format": "prettier . --write",
     "format:check": "prettier . --check",
     "test": "vitest",
-    "test:ui": "vitest --ui",
     "test:e2e": "playwright test",
     "typecheck": "tsc --noEmit",
     "prepare": "husky"

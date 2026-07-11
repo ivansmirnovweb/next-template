@@ -6,6 +6,7 @@ import { DialogShowcase } from "./components/DialogShowcase";
 import { DropdownMenuShowcase } from "./components/DropdownMenuShowcase";
 import { InputShowcase } from "./components/InputShowcase";
 import { LabelShowcase } from "./components/LabelShowcase";
+import { LeadFormShowcase } from "./components/LeadFormShowcase";
 import { RadioGroupShowcase } from "./components/RadioGroupShowcase";
 import { SelectShowcase } from "./components/SelectShowcase";
 import { SheetShowcase } from "./components/SheetShowcase";
@@ -108,6 +109,15 @@ export const showcaseEntries: ShowcaseEntry[] = [
       { id: "standalone-label", label: "Standalone label" },
       { id: "field-composition", label: "Field composition" },
     ],
+  },
+  {
+    slug: "lead-form",
+    title: "LeadForm",
+    description:
+      "Validated lead capture with submission, pending, success, and error feedback.",
+    group: "inputs",
+    Component: LeadFormShowcase,
+    anchors: [{ id: "lead-form", label: "Lead form" }],
   },
   {
     slug: "tabs",

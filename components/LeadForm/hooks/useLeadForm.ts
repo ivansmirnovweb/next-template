@@ -1,6 +1,7 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useRef } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 
@@ -14,6 +15,7 @@ const DEFAULT_VALUES: Lead = {
 };
 
 export const useLeadForm = () => {
+  const isSubmittingRef = useRef(false);
   const form = useForm<Lead>({
     resolver: zodResolver(leadSchema),
     defaultValues: DEFAULT_VALUES,
@@ -21,11 +23,23 @@ export const useLeadForm = () => {
   const { mutateAsync, isPending, error } = useLeadMutation();
 
   const onSubmit = async (data: Lead) => {
-    const { success } = await mutateAsync(data);
+    if (isSubmittingRef.current) {
+      return;
+    }
 
-    if (success) {
-      form.reset(DEFAULT_VALUES);
-      toast.success("Request sent successfully!");
+    isSubmittingRef.current = true;
+
+    try {
+      const { success } = await mutateAsync(data);
+
+      if (success) {
+        form.reset(DEFAULT_VALUES);
+        toast.success("Request sent successfully!");
+      }
+    } catch {
+      // The mutation error is rendered by LeadForm.
+    } finally {
+      isSubmittingRef.current = false;
     }
   };
 
