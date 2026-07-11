@@ -19,6 +19,14 @@ test("renders section catalog, opens a detail page, and verifies mobile menu", a
   await expect(
     page.getByRole("heading", { name: "HeaderCentered" }),
   ).toBeVisible();
+  await expect(page.getByRole("heading", { name: "HeroOffer" })).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: "HeroPersonal" }),
+  ).toBeVisible();
+  await expect(page.getByRole("heading", { name: "HeroProof" })).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: "HeroShowcase" }),
+  ).toBeVisible();
   await expect(
     page.getByRole("heading", { name: "FooterSimple" }),
   ).toBeVisible();
@@ -29,23 +37,18 @@ test("renders section catalog, opens a detail page, and verifies mobile menu", a
     page.getByRole("heading", { name: "FooterWithContacts" }),
   ).toBeVisible();
 
-  await page.getByRole("link", { name: /FooterColumns/i }).click();
+  await page.getByRole("link", { name: /HeroPersonal/i }).click();
 
-  await expect(page).toHaveURL(/\/sections\/footer-columns$/);
+  await expect(page).toHaveURL(/\/sections\/hero-personal$/);
   await expect(
-    page.getByRole("heading", { name: "FooterColumns" }),
+    page.getByRole("heading", { name: "HeroPersonal" }),
   ).toBeVisible();
 
   await page.setViewportSize({ width: 390, height: 844 });
 
-  const resourcesTrigger = page.getByRole("button", { name: "Resources" });
+  const primaryAction = page.getByRole("link", {
+    name: "Start a conversation",
+  });
 
-  await resourcesTrigger.click();
-
-  await expect(resourcesTrigger).toHaveAttribute("aria-expanded", "true");
-  await expect(page.getByRole("link", { name: "Documentation" })).toBeVisible();
-
-  await resourcesTrigger.click();
-
-  await expect(resourcesTrigger).toHaveAttribute("aria-expanded", "false");
+  await expect(primaryAction).toBeVisible();
 });

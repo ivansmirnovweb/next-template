@@ -4,6 +4,10 @@ import { FooterWithContactsSectionShowcase } from "./components/FooterWithContac
 import { HeaderCenteredSectionShowcase } from "./components/HeaderCenteredSectionShowcase";
 import { HeaderSimpleSectionShowcase } from "./components/HeaderSimpleSectionShowcase";
 import { HeaderWithContactsSectionShowcase } from "./components/HeaderWithContactsSectionShowcase";
+import { HeroOfferSectionShowcase } from "./components/HeroOfferSectionShowcase";
+import { HeroPersonalSectionShowcase } from "./components/HeroPersonalSectionShowcase";
+import { HeroProofSectionShowcase } from "./components/HeroProofSectionShowcase";
+import { HeroShowcaseSectionShowcase } from "./components/HeroShowcaseSectionShowcase";
 import type { ShowcaseSectionEntry, ShowcaseSectionGroup } from "./types";
 
 export const showcaseSectionEntries: ShowcaseSectionEntry[] = [
@@ -30,6 +34,38 @@ export const showcaseSectionEntries: ShowcaseSectionEntry[] = [
       "Editorial header with split navigation groups and a centered brand mark.",
     group: "headers",
     Component: HeaderCenteredSectionShowcase,
+  },
+  {
+    slug: "hero-offer",
+    title: "HeroOffer",
+    description:
+      "Offer-led hero that makes the audience, value, and next action immediately clear.",
+    group: "heroes",
+    Component: HeroOfferSectionShowcase,
+  },
+  {
+    slug: "hero-personal",
+    title: "HeroPersonal",
+    description:
+      "Portrait-led hero for a personal brand, combining a clear position, direct actions, and concise credibility signals.",
+    group: "heroes",
+    Component: HeroPersonalSectionShowcase,
+  },
+  {
+    slug: "hero-proof",
+    title: "HeroProof",
+    description:
+      "Evidence-led hero that reinforces one offer with outcomes, ratings, guarantees, and customer signals.",
+    group: "heroes",
+    Component: HeroProofSectionShowcase,
+  },
+  {
+    slug: "hero-showcase",
+    title: "HeroShowcase",
+    description:
+      "Demonstration-led hero that gives a product or result its own decisive visual stage.",
+    group: "heroes",
+    Component: HeroShowcaseSectionShowcase,
   },
   {
     slug: "footer-simple",
@@ -71,7 +107,7 @@ export const showcaseSectionEntriesByGroup = showcaseSectionEntries.reduce<
   },
   {
     headers: [],
+    heroes: [],
     footers: [],
-    "lead-forms": [],
   },
 );
