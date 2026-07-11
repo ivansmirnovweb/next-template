@@ -72,5 +72,6 @@ export const showcaseSectionEntriesByGroup = showcaseSectionEntries.reduce<
   {
     headers: [],
     footers: [],
+    "lead-forms": [],
   },
 );
