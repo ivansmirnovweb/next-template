@@ -28,6 +28,15 @@ test("renders section catalog, opens a detail page, and verifies mobile menu", a
     page.getByRole("heading", { name: "HeroShowcase" }),
   ).toBeVisible();
   await expect(
+    page.getByRole("heading", { name: "BenefitsOutcomes" }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: "BenefitsContrast" }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: "BenefitsVisual" }),
+  ).toBeVisible();
+  await expect(
     page.getByRole("heading", { name: "FooterSimple" }),
   ).toBeVisible();
   await expect(
@@ -51,4 +60,32 @@ test("renders section catalog, opens a detail page, and verifies mobile menu", a
   });
 
   await expect(primaryAction).toBeVisible();
+});
+
+test("renders the visual benefits showcase without horizontal overflow", async ({
+  page,
+}) => {
+  await page.goto("/sections/benefits-visual");
+
+  await expect(
+    page.getByRole("heading", { name: "BenefitsVisual" }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("img", { name: "Person resting by the sea at sunset" }),
+  ).toBeVisible();
+  await expect(page.getByText("Today’s plan")).toBeVisible();
+  expect(
+    await page
+      .locator("html")
+      .evaluate((element) => element.scrollWidth <= element.clientWidth),
+  ).toBe(true);
+
+  await page.setViewportSize({ width: 390, height: 844 });
+
+  await expect(page.getByText("Today’s plan")).toBeVisible();
+  expect(
+    await page
+      .locator("html")
+      .evaluate((element) => element.scrollWidth <= element.clientWidth),
+  ).toBe(true);
 });

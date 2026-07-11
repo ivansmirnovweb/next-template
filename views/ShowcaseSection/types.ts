@@ -1,6 +1,11 @@
 import type { ComponentType } from "react";
 
-export const showcaseSectionGroups = ["headers", "heroes", "footers"];
+export const showcaseSectionGroups = [
+  "headers",
+  "heroes",
+  "benefits",
+  "footers",
+];
 
 export type ShowcaseSectionGroup = (typeof showcaseSectionGroups)[number];
 

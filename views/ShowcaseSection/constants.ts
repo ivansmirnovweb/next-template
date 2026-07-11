@@ -1,6 +1,9 @@
 import { FooterColumnsSectionShowcase } from "./components/FooterColumnsSectionShowcase";
 import { FooterSimpleSectionShowcase } from "./components/FooterSimpleSectionShowcase";
 import { FooterWithContactsSectionShowcase } from "./components/FooterWithContactsSectionShowcase";
+import { BenefitsContrastSectionShowcase } from "./components/BenefitsContrastSectionShowcase";
+import { BenefitsOutcomesSectionShowcase } from "./components/BenefitsOutcomesSectionShowcase";
+import { BenefitsVisualSectionShowcase } from "./components/BenefitsVisualSectionShowcase";
 import { HeaderCenteredSectionShowcase } from "./components/HeaderCenteredSectionShowcase";
 import { HeaderSimpleSectionShowcase } from "./components/HeaderSimpleSectionShowcase";
 import { HeaderWithContactsSectionShowcase } from "./components/HeaderWithContactsSectionShowcase";
@@ -68,6 +71,30 @@ export const showcaseSectionEntries: ShowcaseSectionEntry[] = [
     Component: HeroShowcaseSectionShowcase,
   },
   {
+    slug: "benefits-outcomes",
+    title: "BenefitsOutcomes",
+    description:
+      "Outcome-led benefits that explain the concrete result and the mechanism behind it.",
+    group: "benefits",
+    Component: BenefitsOutcomesSectionShowcase,
+  },
+  {
+    slug: "benefits-contrast",
+    title: "BenefitsContrast",
+    description:
+      "Problem-to-solution benefits that make a familiar risk and its resolution easy to compare.",
+    group: "benefits",
+    Component: BenefitsContrastSectionShowcase,
+  },
+  {
+    slug: "benefits-visual",
+    title: "BenefitsVisual",
+    description:
+      "Visual benefits that use a meaningful image or interface fragment to make the value tangible.",
+    group: "benefits",
+    Component: BenefitsVisualSectionShowcase,
+  },
+  {
     slug: "footer-simple",
     title: "FooterSimple",
     description:
@@ -108,6 +135,7 @@ export const showcaseSectionEntriesByGroup = showcaseSectionEntries.reduce<
   {
     headers: [],
     heroes: [],
+    benefits: [],
     footers: [],
   },
 );
