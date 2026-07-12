@@ -4,6 +4,12 @@ import { FooterWithContactsSectionShowcase } from "./components/FooterWithContac
 import { BenefitsContrastSectionShowcase } from "./components/BenefitsContrastSectionShowcase";
 import { BenefitsOutcomesSectionShowcase } from "./components/BenefitsOutcomesSectionShowcase";
 import { BenefitsVisualSectionShowcase } from "./components/BenefitsVisualSectionShowcase";
+import { AboutOverviewSectionShowcase } from "./components/AboutOverviewSectionShowcase";
+import { AboutPeopleSectionShowcase } from "./components/AboutPeopleSectionShowcase";
+import { AboutStorySectionShowcase } from "./components/AboutStorySectionShowcase";
+import { ServicesCatalogSectionShowcase } from "./components/ServicesCatalogSectionShowcase";
+import { ServicesFeaturedSectionShowcase } from "./components/ServicesFeaturedSectionShowcase";
+import { ServicesGuidedSectionShowcase } from "./components/ServicesGuidedSectionShowcase";
 import { HeaderCenteredSectionShowcase } from "./components/HeaderCenteredSectionShowcase";
 import { HeaderSimpleSectionShowcase } from "./components/HeaderSimpleSectionShowcase";
 import { HeaderWithContactsSectionShowcase } from "./components/HeaderWithContactsSectionShowcase";
@@ -71,6 +77,30 @@ export const showcaseSectionEntries: ShowcaseSectionEntry[] = [
     Component: HeroShowcaseSectionShowcase,
   },
   {
+    slug: "about-overview",
+    title: "AboutOverview",
+    description:
+      "A concise company introduction that connects its work, audience, and concrete difference.",
+    group: "about",
+    Component: AboutOverviewSectionShowcase,
+  },
+  {
+    slug: "about-story",
+    title: "AboutStory",
+    description:
+      "A compact origin story that connects the original problem to the way the work is done today.",
+    group: "about",
+    Component: AboutStorySectionShowcase,
+  },
+  {
+    slug: "about-people",
+    title: "AboutPeople",
+    description:
+      "Professional profiles that explain who leads the work and what each person brings to it.",
+    group: "about",
+    Component: AboutPeopleSectionShowcase,
+  },
+  {
     slug: "benefits-outcomes",
     title: "BenefitsOutcomes",
     description:
@@ -93,6 +123,30 @@ export const showcaseSectionEntries: ShowcaseSectionEntry[] = [
       "Visual benefits that use a meaningful image or interface fragment to make the value tangible.",
     group: "benefits",
     Component: BenefitsVisualSectionShowcase,
+  },
+  {
+    slug: "services-catalog",
+    title: "ServicesCatalog",
+    description:
+      "Equal-weight service cards for scanning a complete offer and opening the relevant detail.",
+    group: "services",
+    Component: ServicesCatalogSectionShowcase,
+  },
+  {
+    slug: "services-guided",
+    title: "ServicesGuided",
+    description:
+      "Need-led service choices that connect a visitor’s situation to a clear next direction.",
+    group: "services",
+    Component: ServicesGuidedSectionShowcase,
+  },
+  {
+    slug: "services-featured",
+    title: "ServicesFeatured",
+    description:
+      "A commercially focused service section with one lead offer and supporting directions.",
+    group: "services",
+    Component: ServicesFeaturedSectionShowcase,
   },
   {
     slug: "footer-simple",
@@ -135,7 +189,9 @@ export const showcaseSectionEntriesByGroup = showcaseSectionEntries.reduce<
   {
     headers: [],
     heroes: [],
+    about: [],
     benefits: [],
+    services: [],
     footers: [],
   },
 );

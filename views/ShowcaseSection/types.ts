@@ -3,7 +3,9 @@ import type { ComponentType } from "react";
 export const showcaseSectionGroups = [
   "headers",
   "heroes",
+  "about",
   "benefits",
+  "services",
   "footers",
 ];
 
