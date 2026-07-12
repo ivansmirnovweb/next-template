@@ -53,6 +53,15 @@ test("renders section catalog, opens a detail page, and verifies mobile menu", a
     page.getByRole("heading", { name: "ServicesFeatured" }),
   ).toBeVisible();
   await expect(
+    page.getByRole("heading", { name: "ProcessSteps" }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: "ProcessDeliverables" }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: "ProcessCollaboration" }),
+  ).toBeVisible();
+  await expect(
     page.getByRole("heading", { name: "FooterSimple" }),
   ).toBeVisible();
   await expect(
@@ -156,6 +165,43 @@ test("renders services variants without horizontal overflow", async ({
 
   await page.setViewportSize({ width: 390, height: 844 });
   await expect(page.getByText("Offer → proof → conversation")).toBeVisible();
+  expect(
+    await page
+      .locator("html")
+      .evaluate((element) => element.scrollWidth <= element.clientWidth),
+  ).toBe(true);
+});
+
+test("renders process variants without horizontal overflow", async ({
+  page,
+}) => {
+  await page.goto("/sections/process-steps");
+
+  await expect(page.getByText("Step 01")).toBeVisible();
+  expect(
+    await page
+      .locator("html")
+      .evaluate((element) => element.scrollWidth <= element.clientWidth),
+  ).toBe(true);
+
+  await page.setViewportSize({ width: 390, height: 844 });
+  await expect(page.getByText("Put the result to work")).toBeVisible();
+  expect(
+    await page
+      .locator("html")
+      .evaluate((element) => element.scrollWidth <= element.clientWidth),
+  ).toBe(true);
+
+  await page.goto("/sections/process-deliverables");
+  await expect(
+    page.getByText(
+      "A concise brief with priorities, risks, and the agreed scope.",
+    ),
+  ).toBeVisible();
+
+  await page.goto("/sections/process-collaboration");
+  await expect(page.getByText("Client").first()).toBeVisible();
+  await expect(page.getByText("Team").first()).toBeVisible();
   expect(
     await page
       .locator("html")

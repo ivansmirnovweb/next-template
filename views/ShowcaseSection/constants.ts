@@ -17,6 +17,9 @@ import { HeroOfferSectionShowcase } from "./components/HeroOfferSectionShowcase"
 import { HeroPersonalSectionShowcase } from "./components/HeroPersonalSectionShowcase";
 import { HeroProofSectionShowcase } from "./components/HeroProofSectionShowcase";
 import { HeroShowcaseSectionShowcase } from "./components/HeroShowcaseSectionShowcase";
+import { ProcessCollaborationSectionShowcase } from "./components/ProcessCollaborationSectionShowcase";
+import { ProcessDeliverablesSectionShowcase } from "./components/ProcessDeliverablesSectionShowcase";
+import { ProcessStepsSectionShowcase } from "./components/ProcessStepsSectionShowcase";
 import type { ShowcaseSectionEntry, ShowcaseSectionGroup } from "./types";
 
 export const showcaseSectionEntries: ShowcaseSectionEntry[] = [
@@ -149,6 +152,30 @@ export const showcaseSectionEntries: ShowcaseSectionEntry[] = [
     Component: ServicesFeaturedSectionShowcase,
   },
   {
+    slug: "process-steps",
+    title: "ProcessSteps",
+    description:
+      "A clear customer journey that makes each step from first contact to result easy to scan.",
+    group: "process",
+    Component: ProcessStepsSectionShowcase,
+  },
+  {
+    slug: "process-deliverables",
+    title: "ProcessDeliverables",
+    description:
+      "A stage-by-stage process that keeps the concrete result for the client in focus.",
+    group: "process",
+    Component: ProcessDeliverablesSectionShowcase,
+  },
+  {
+    slug: "process-collaboration",
+    title: "ProcessCollaboration",
+    description:
+      "A shared process that separates client and team responsibilities without becoming a table.",
+    group: "process",
+    Component: ProcessCollaborationSectionShowcase,
+  },
+  {
     slug: "footer-simple",
     title: "FooterSimple",
     description:
@@ -192,6 +219,7 @@ export const showcaseSectionEntriesByGroup = showcaseSectionEntries.reduce<
     about: [],
     benefits: [],
     services: [],
+    process: [],
     footers: [],
   },
 );

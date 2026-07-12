@@ -103,6 +103,22 @@ export const ShowcaseSectionsPage = () => {
           </ShowcaseSection>
 
           <ShowcaseSection
+            title="Process"
+            description="Process-section patterns that explain the journey, the tangible output, or the responsibilities shared with a client."
+          >
+            <ul className="grid gap-4">
+              {showcaseSectionEntriesByGroup.process.map((entry) => (
+                <ShowcaseNavItem
+                  key={entry.slug}
+                  title={entry.title}
+                  description={entry.description}
+                  href={`/sections/${entry.slug}`}
+                />
+              ))}
+            </ul>
+          </ShowcaseSection>
+
+          <ShowcaseSection
             title="Footers"
             description="Closing section patterns for compact sites, larger navigation systems, and contact-led businesses."
           >
