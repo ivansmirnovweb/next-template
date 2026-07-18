@@ -10,6 +10,9 @@ import { AboutStorySectionShowcase } from "./components/AboutStorySectionShowcas
 import { ServicesCatalogSectionShowcase } from "./components/ServicesCatalogSectionShowcase";
 import { ServicesFeaturedSectionShowcase } from "./components/ServicesFeaturedSectionShowcase";
 import { ServicesGuidedSectionShowcase } from "./components/ServicesGuidedSectionShowcase";
+import { WorksCaseStudiesSectionShowcase } from "./components/WorksCaseStudiesSectionShowcase";
+import { WorksFeaturedSectionShowcase } from "./components/WorksFeaturedSectionShowcase";
+import { WorksGallerySectionShowcase } from "./components/WorksGallerySectionShowcase";
 import { HeaderCenteredSectionShowcase } from "./components/HeaderCenteredSectionShowcase";
 import { HeaderSimpleSectionShowcase } from "./components/HeaderSimpleSectionShowcase";
 import { HeaderWithContactsSectionShowcase } from "./components/HeaderWithContactsSectionShowcase";
@@ -152,6 +155,30 @@ export const showcaseSectionEntries: ShowcaseSectionEntry[] = [
     Component: ServicesFeaturedSectionShowcase,
   },
   {
+    slug: "works-gallery",
+    title: "WorksGallery",
+    description:
+      "An image-led portfolio grid that makes a varied body of work quick to browse without losing the story behind each project.",
+    group: "works",
+    Component: WorksGallerySectionShowcase,
+  },
+  {
+    slug: "works-featured",
+    title: "WorksFeatured",
+    description:
+      "A lead-project composition that gives the strongest work room for its visual, context, and contribution.",
+    group: "works",
+    Component: WorksFeaturedSectionShowcase,
+  },
+  {
+    slug: "works-case-studies",
+    title: "WorksCaseStudies",
+    description:
+      "A case-study pattern that makes the challenge, the response, and the result independently easy to evaluate.",
+    group: "works",
+    Component: WorksCaseStudiesSectionShowcase,
+  },
+  {
     slug: "process-steps",
     title: "ProcessSteps",
     description:
@@ -219,6 +246,7 @@ export const showcaseSectionEntriesByGroup = showcaseSectionEntries.reduce<
     about: [],
     benefits: [],
     services: [],
+    works: [],
     process: [],
     footers: [],
   },
