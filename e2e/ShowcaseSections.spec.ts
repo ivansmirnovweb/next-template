@@ -70,6 +70,15 @@ test("renders section catalog, opens a detail page, and verifies mobile menu", a
   await expect(
     page.getByRole("heading", { name: "ProcessCollaboration" }),
   ).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: "FAQEssential" }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: "FAQCategories" }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: "FAQWithContact" }),
+  ).toBeVisible();
   await expect(page.getByRole("heading", { name: "CTADirect" })).toBeVisible();
   await expect(
     page.getByRole("heading", { name: "CTAReassurance" }),
@@ -294,6 +303,56 @@ test("renders CTA variants without horizontal overflow", async ({ page }) => {
   ).toBeVisible();
   await expect(
     page.getByRole("link", { name: "View selected work" }),
+  ).toBeVisible();
+  expect(
+    await page
+      .locator("html")
+      .evaluate((element) => element.scrollWidth <= element.clientWidth),
+  ).toBe(true);
+});
+
+test("renders FAQ variants with accessible accordions and without horizontal overflow", async ({
+  page,
+}) => {
+  await page.goto("/sections/faq-essential");
+
+  const costQuestion = page.getByRole("button", {
+    name: "How is the project cost determined?",
+  });
+
+  await expect(costQuestion).toHaveAttribute("aria-expanded", "false");
+  await costQuestion.click();
+  await expect(costQuestion).toHaveAttribute("aria-expanded", "true");
+  await expect(
+    page.getByText(/scope, milestones, and fixed investment/i),
+  ).toBeVisible();
+  expect(
+    await page
+      .locator("html")
+      .evaluate((element) => element.scrollWidth <= element.clientWidth),
+  ).toBe(true);
+
+  await page.setViewportSize({ width: 390, height: 844 });
+  await expect(
+    page.getByText("What materials do you need from us?"),
+  ).toBeVisible();
+  expect(
+    await page
+      .locator("html")
+      .evaluate((element) => element.scrollWidth <= element.clientWidth),
+  ).toBe(true);
+
+  await page.goto("/sections/faq-categories");
+  await expect(
+    page.getByRole("heading", { name: "Planning the work" }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: "Delivery and follow-through" }),
+  ).toBeVisible();
+
+  await page.goto("/sections/faq-with-contact");
+  await expect(
+    page.getByRole("link", { name: "Ask a project question" }),
   ).toBeVisible();
   expect(
     await page

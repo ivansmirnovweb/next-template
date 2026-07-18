@@ -26,6 +26,9 @@ import { HeroShowcaseSectionShowcase } from "./components/HeroShowcaseSectionSho
 import { ProcessCollaborationSectionShowcase } from "./components/ProcessCollaborationSectionShowcase";
 import { ProcessDeliverablesSectionShowcase } from "./components/ProcessDeliverablesSectionShowcase";
 import { ProcessStepsSectionShowcase } from "./components/ProcessStepsSectionShowcase";
+import { FAQCategoriesSectionShowcase } from "./components/FAQCategoriesSectionShowcase";
+import { FAQEssentialSectionShowcase } from "./components/FAQEssentialSectionShowcase";
+import { FAQWithContactSectionShowcase } from "./components/FAQWithContactSectionShowcase";
 import { CTAChoiceSectionShowcase } from "./components/CTAChoiceSectionShowcase";
 import { CTADirectSectionShowcase } from "./components/CTADirectSectionShowcase";
 import { CTAReassuranceSectionShowcase } from "./components/CTAReassuranceSectionShowcase";
@@ -233,6 +236,30 @@ export const showcaseSectionEntries: ShowcaseSectionEntry[] = [
     Component: ProcessCollaborationSectionShowcase,
   },
   {
+    slug: "faq-essential",
+    title: "FAQEssential",
+    description:
+      "A focused FAQ that resolves the key commercial objections before the primary next step.",
+    group: "faq",
+    Component: FAQEssentialSectionShowcase,
+  },
+  {
+    slug: "faq-categories",
+    title: "FAQCategories",
+    description:
+      "A category-led FAQ for a larger volume of commercial questions that stays easy to scan.",
+    group: "faq",
+    Component: FAQCategoriesSectionShowcase,
+  },
+  {
+    slug: "faq-with-contact",
+    title: "FAQWithContact",
+    description:
+      "A concise FAQ with a secondary contact route for questions that need project context.",
+    group: "faq",
+    Component: FAQWithContactSectionShowcase,
+  },
+  {
     slug: "cta-direct",
     title: "CTADirect",
     description:
@@ -303,6 +330,7 @@ export const showcaseSectionEntriesByGroup = showcaseSectionEntries.reduce<
     works: [],
     testimonials: [],
     process: [],
+    faq: [],
     cta: [],
     footers: [],
   },
