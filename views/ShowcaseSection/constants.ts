@@ -32,6 +32,9 @@ import { FAQWithContactSectionShowcase } from "./components/FAQWithContactSectio
 import { CTAChoiceSectionShowcase } from "./components/CTAChoiceSectionShowcase";
 import { CTADirectSectionShowcase } from "./components/CTADirectSectionShowcase";
 import { CTAReassuranceSectionShowcase } from "./components/CTAReassuranceSectionShowcase";
+import { ContactsChannelsSectionShowcase } from "./components/ContactsChannelsSectionShowcase";
+import { ContactsLocationSectionShowcase } from "./components/ContactsLocationSectionShowcase";
+import { ContactsRoutingSectionShowcase } from "./components/ContactsRoutingSectionShowcase";
 import type { ShowcaseSectionEntry, ShowcaseSectionGroup } from "./types";
 
 export const showcaseSectionEntries: ShowcaseSectionEntry[] = [
@@ -236,6 +239,30 @@ export const showcaseSectionEntries: ShowcaseSectionEntry[] = [
     Component: ProcessCollaborationSectionShowcase,
   },
   {
+    slug: "contacts-channels",
+    title: "ContactsChannels",
+    description:
+      "Direct contact channels with enough context to choose between a call, email, or messenger.",
+    group: "contacts",
+    Component: ContactsChannelsSectionShowcase,
+  },
+  {
+    slug: "contacts-location",
+    title: "ContactsLocation",
+    description:
+      "Location details that preserve a readable address while supporting directions and an optional map preview.",
+    group: "contacts",
+    Component: ContactsLocationSectionShowcase,
+  },
+  {
+    slug: "contacts-routing",
+    title: "ContactsRouting",
+    description:
+      "Purpose-led contact routes that connect each kind of enquiry with the responsible team.",
+    group: "contacts",
+    Component: ContactsRoutingSectionShowcase,
+  },
+  {
     slug: "faq-essential",
     title: "FAQEssential",
     description:
@@ -330,6 +357,7 @@ export const showcaseSectionEntriesByGroup = showcaseSectionEntries.reduce<
     works: [],
     testimonials: [],
     process: [],
+    contacts: [],
     faq: [],
     cta: [],
     footers: [],
