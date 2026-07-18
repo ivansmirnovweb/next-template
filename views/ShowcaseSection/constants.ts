@@ -26,6 +26,9 @@ import { HeroShowcaseSectionShowcase } from "./components/HeroShowcaseSectionSho
 import { ProcessCollaborationSectionShowcase } from "./components/ProcessCollaborationSectionShowcase";
 import { ProcessDeliverablesSectionShowcase } from "./components/ProcessDeliverablesSectionShowcase";
 import { ProcessStepsSectionShowcase } from "./components/ProcessStepsSectionShowcase";
+import { CTAChoiceSectionShowcase } from "./components/CTAChoiceSectionShowcase";
+import { CTADirectSectionShowcase } from "./components/CTADirectSectionShowcase";
+import { CTAReassuranceSectionShowcase } from "./components/CTAReassuranceSectionShowcase";
 import type { ShowcaseSectionEntry, ShowcaseSectionGroup } from "./types";
 
 export const showcaseSectionEntries: ShowcaseSectionEntry[] = [
@@ -230,6 +233,30 @@ export const showcaseSectionEntries: ShowcaseSectionEntry[] = [
     Component: ProcessCollaborationSectionShowcase,
   },
   {
+    slug: "cta-direct",
+    title: "CTADirect",
+    description:
+      "A focused closing section with one clear offer and one decisive next step.",
+    group: "cta",
+    Component: CTADirectSectionShowcase,
+  },
+  {
+    slug: "cta-reassurance",
+    title: "CTAReassurance",
+    description:
+      "A primary action supported by just enough reassurance to remove first-step uncertainty.",
+    group: "cta",
+    Component: CTAReassuranceSectionShowcase,
+  },
+  {
+    slug: "cta-choice",
+    title: "CTAChoice",
+    description:
+      "A clear primary route with a lower-commitment option for visitors still exploring.",
+    group: "cta",
+    Component: CTAChoiceSectionShowcase,
+  },
+  {
     slug: "footer-simple",
     title: "FooterSimple",
     description:
@@ -276,6 +303,7 @@ export const showcaseSectionEntriesByGroup = showcaseSectionEntries.reduce<
     works: [],
     testimonials: [],
     process: [],
+    cta: [],
     footers: [],
   },
 );

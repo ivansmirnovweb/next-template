@@ -151,6 +151,22 @@ export const ShowcaseSectionsPage = () => {
           </ShowcaseSection>
 
           <ShowcaseSection
+            title="Calls to action"
+            description="Closing-section patterns for a direct next step, lower-risk outreach, or a softer exploration route."
+          >
+            <ul className="grid gap-4">
+              {showcaseSectionEntriesByGroup.cta.map((entry) => (
+                <ShowcaseNavItem
+                  key={entry.slug}
+                  title={entry.title}
+                  description={entry.description}
+                  href={`/sections/${entry.slug}`}
+                />
+              ))}
+            </ul>
+          </ShowcaseSection>
+
+          <ShowcaseSection
             title="Footers"
             description="Closing section patterns for compact sites, larger navigation systems, and contact-led businesses."
           >

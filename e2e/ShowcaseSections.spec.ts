@@ -70,6 +70,11 @@ test("renders section catalog, opens a detail page, and verifies mobile menu", a
   await expect(
     page.getByRole("heading", { name: "ProcessCollaboration" }),
   ).toBeVisible();
+  await expect(page.getByRole("heading", { name: "CTADirect" })).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: "CTAReassurance" }),
+  ).toBeVisible();
+  await expect(page.getByRole("heading", { name: "CTAChoice" })).toBeVisible();
   await expect(
     page.getByRole("heading", { name: "FooterSimple" }),
   ).toBeVisible();
@@ -251,6 +256,45 @@ test("renders process variants without horizontal overflow", async ({
   await page.goto("/sections/process-collaboration");
   await expect(page.getByText("Client").first()).toBeVisible();
   await expect(page.getByText("Team").first()).toBeVisible();
+  expect(
+    await page
+      .locator("html")
+      .evaluate((element) => element.scrollWidth <= element.clientWidth),
+  ).toBe(true);
+});
+
+test("renders CTA variants without horizontal overflow", async ({ page }) => {
+  await page.goto("/sections/cta-direct");
+
+  await expect(
+    page.getByRole("link", { name: "Start a conversation" }),
+  ).toBeVisible();
+  expect(
+    await page
+      .locator("html")
+      .evaluate((element) => element.scrollWidth <= element.clientWidth),
+  ).toBe(true);
+
+  await page.setViewportSize({ width: 390, height: 844 });
+  await expect(
+    page.getByText("We will reply with the next practical step."),
+  ).toBeVisible();
+  expect(
+    await page
+      .locator("html")
+      .evaluate((element) => element.scrollWidth <= element.clientWidth),
+  ).toBe(true);
+
+  await page.goto("/sections/cta-reassurance");
+  await expect(page.getByText("No technical brief is required.")).toBeVisible();
+
+  await page.goto("/sections/cta-choice");
+  await expect(
+    page.getByRole("link", { name: "Discuss the launch" }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("link", { name: "View selected work" }),
+  ).toBeVisible();
   expect(
     await page
       .locator("html")
