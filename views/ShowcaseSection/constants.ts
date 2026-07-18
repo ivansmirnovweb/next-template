@@ -13,6 +13,9 @@ import { ServicesGuidedSectionShowcase } from "./components/ServicesGuidedSectio
 import { WorksCaseStudiesSectionShowcase } from "./components/WorksCaseStudiesSectionShowcase";
 import { WorksFeaturedSectionShowcase } from "./components/WorksFeaturedSectionShowcase";
 import { WorksGallerySectionShowcase } from "./components/WorksGallerySectionShowcase";
+import { TestimonialsCollectionSectionShowcase } from "./components/TestimonialsCollectionSectionShowcase";
+import { TestimonialsFeaturedSectionShowcase } from "./components/TestimonialsFeaturedSectionShowcase";
+import { TestimonialsStoriesSectionShowcase } from "./components/TestimonialsStoriesSectionShowcase";
 import { HeaderCenteredSectionShowcase } from "./components/HeaderCenteredSectionShowcase";
 import { HeaderSimpleSectionShowcase } from "./components/HeaderSimpleSectionShowcase";
 import { HeaderWithContactsSectionShowcase } from "./components/HeaderWithContactsSectionShowcase";
@@ -179,6 +182,30 @@ export const showcaseSectionEntries: ShowcaseSectionEntry[] = [
     Component: WorksCaseStudiesSectionShowcase,
   },
   {
+    slug: "testimonials-collection",
+    title: "TestimonialsCollection",
+    description:
+      "A varied testimonial collection that makes a repeatable positive client experience easy to trust.",
+    group: "testimonials",
+    Component: TestimonialsCollectionSectionShowcase,
+  },
+  {
+    slug: "testimonials-featured",
+    title: "TestimonialsFeatured",
+    description:
+      "A high-priority testimonial pattern for one authoritative client voice and a supporting outcome.",
+    group: "testimonials",
+    Component: TestimonialsFeaturedSectionShowcase,
+  },
+  {
+    slug: "testimonials-stories",
+    title: "TestimonialsStories",
+    description:
+      "Customer stories that distinguish a starting situation, a change, and the client’s own words.",
+    group: "testimonials",
+    Component: TestimonialsStoriesSectionShowcase,
+  },
+  {
     slug: "process-steps",
     title: "ProcessSteps",
     description:
@@ -247,6 +274,7 @@ export const showcaseSectionEntriesByGroup = showcaseSectionEntries.reduce<
     benefits: [],
     services: [],
     works: [],
+    testimonials: [],
     process: [],
     footers: [],
   },

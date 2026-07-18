@@ -7,6 +7,7 @@ export const showcaseSectionGroups = [
   "benefits",
   "services",
   "works",
+  "testimonials",
   "process",
   "footers",
 ];

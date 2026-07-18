@@ -53,6 +53,15 @@ test("renders section catalog, opens a detail page, and verifies mobile menu", a
     page.getByRole("heading", { name: "ServicesFeatured" }),
   ).toBeVisible();
   await expect(
+    page.getByRole("heading", { name: "TestimonialsCollection" }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: "TestimonialsFeatured" }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: "TestimonialsStories" }),
+  ).toBeVisible();
+  await expect(
     page.getByRole("heading", { name: "ProcessSteps" }),
   ).toBeVisible();
   await expect(
@@ -165,6 +174,46 @@ test("renders services variants without horizontal overflow", async ({
 
   await page.setViewportSize({ width: 390, height: 844 });
   await expect(page.getByText("Offer → proof → conversation")).toBeVisible();
+  expect(
+    await page
+      .locator("html")
+      .evaluate((element) => element.scrollWidth <= element.clientWidth),
+  ).toBe(true);
+});
+
+test("renders testimonial variants without horizontal overflow", async ({
+  page,
+}) => {
+  await page.goto("/sections/testimonials-collection");
+
+  await expect(page.getByText("Illustrative customer feedback")).toBeVisible();
+  await expect(page.getByText("Rina Solberg")).toBeVisible();
+  expect(
+    await page
+      .locator("html")
+      .evaluate((element) => element.scrollWidth <= element.clientWidth),
+  ).toBe(true);
+
+  await page.setViewportSize({ width: 390, height: 844 });
+  await expect(page.getByText("Tom Ellis")).toBeVisible();
+  expect(
+    await page
+      .locator("html")
+      .evaluate((element) => element.scrollWidth <= element.clientWidth),
+  ).toBe(true);
+
+  await page.goto("/sections/testimonials-featured");
+  await expect(page.getByText("Leila Morton")).toBeVisible();
+  await expect(
+    page.getByText(
+      "Illustrative client note — fictional demonstration content.",
+    ),
+  ).toBeVisible();
+
+  await page.goto("/sections/testimonials-stories");
+  await expect(page.getByText("Starting situation").first()).toBeVisible();
+  await expect(page.getByText("Change after the work").first()).toBeVisible();
+  await expect(page.getByText("Nora Bell")).toBeVisible();
   expect(
     await page
       .locator("html")
