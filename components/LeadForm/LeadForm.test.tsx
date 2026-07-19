@@ -39,6 +39,11 @@ const fillValidLead = async (user: ReturnType<typeof userEvent.setup>) => {
     screen.getByLabelText("Project request"),
     "Build a reliable lead intake flow.",
   );
+  await user.click(
+    screen.getByRole("checkbox", {
+      name: "I agree to the processing of my personal data.",
+    }),
+  );
 };
 
 const createDeferred = <T,>() => {
@@ -66,6 +71,11 @@ describe("LeadForm", () => {
     expect(await screen.findByText("Enter your name")).toBeVisible();
     expect(await screen.findByText("Enter a valid email")).toBeVisible();
     expect(await screen.findByText("Tell us what you need")).toBeVisible();
+    expect(
+      await screen.findByText(
+        "Consent to personal data processing is required",
+      ),
+    ).toBeVisible();
     expect(postLeadMock).not.toHaveBeenCalled();
   });
 
@@ -75,6 +85,7 @@ describe("LeadForm", () => {
       name: "Ada Lovelace",
       email: "ada@example.com",
       request: "Build a reliable lead intake flow.",
+      consent: true,
     };
     const response: ApiResponse<null> = { success: true, data: null };
 

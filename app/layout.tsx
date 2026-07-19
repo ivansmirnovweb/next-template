@@ -10,6 +10,7 @@ import "./globals.css";
 import { Toaster } from "sonner";
 import { FooterSimple } from "@/components/Footer";
 import { HeaderSimple } from "@/components/Header";
+import { SITE_CONFIG, SITE_URL } from "@/lib/site";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,10 +23,41 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Next Template",
-  description:
-    "Reusable Next.js template with SSR-safe providers and API patterns.",
+  metadataBase: SITE_URL,
+  title: {
+    default: SITE_CONFIG.name,
+    template: SITE_CONFIG.titleTemplate,
+  },
+  description: SITE_CONFIG.description,
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    locale: SITE_CONFIG.locale,
+    url: "/",
+    siteName: SITE_CONFIG.name,
+    title: SITE_CONFIG.name,
+    description: SITE_CONFIG.description,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE_CONFIG.name,
+    description: SITE_CONFIG.description,
+    images: ["/opengraph-image"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
+
+const WEBSITE_JSON_LD = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: SITE_CONFIG.name,
+  url: SITE_URL.toString(),
+}).replace(/</g, "\\u003c");
 
 const HEADER_NAVIGATION: HeaderLinkItem[] = [
   {
@@ -74,11 +106,15 @@ const FOOTER_SOCIAL_LINKS: FooterSocialLink[] = [
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html
-      lang="en"
+      lang={SITE_CONFIG.language}
       suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-screen overflow-x-hidden bg-background text-foreground">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: WEBSITE_JSON_LD }}
+        />
         <Providers>
           <HeaderSimple
             logo={{

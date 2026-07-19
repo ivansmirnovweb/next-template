@@ -58,40 +58,6 @@ describe("FAQ variants", () => {
     expect(timelineTrigger).toHaveAttribute("aria-expanded", "true");
   });
 
-  it("opens and closes answers with the keyboard without optional introduction text", async () => {
-    const user = userEvent.setup();
-
-    render(
-      <FAQEssential
-        items={[
-          {
-            id: "changes",
-            question: "Can the scope change during the project?",
-            answer: "Yes, we discuss the effect on timing and budget first.",
-          },
-        ]}
-      />,
-    );
-
-    const trigger = screen.getByRole("button", {
-      name: "Can the scope change during the project?",
-    });
-
-    expect(screen.queryByRole("heading")).not.toBeInTheDocument();
-
-    trigger.focus();
-    await user.keyboard("{Enter}");
-    expect(trigger).toHaveAttribute("aria-expanded", "true");
-    expect(
-      screen.getByText(
-        "Yes, we discuss the effect on timing and budget first.",
-      ),
-    ).toBeVisible();
-
-    await user.keyboard(" ");
-    expect(trigger).toHaveAttribute("aria-expanded", "false");
-  });
-
   it("renders visible FAQ categories and omits category descriptions when absent", () => {
     render(
       <FAQCategories

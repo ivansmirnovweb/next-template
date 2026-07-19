@@ -22,6 +22,7 @@
 3. Replace template metadata, navigation, links, contacts, form copy, and legal links with company-specific data.
 4. Use real or approved assets. Add accurate `alt` text to every meaningful image.
 5. Do not copy demonstration names, figures, testimonials, links, or images from showcase routes into the company website.
+6. For every new public page, add its canonical URL to `app/sitemap.ts` and provide unique title, description, and canonical metadata. Add JSON-LD only when it accurately represents the page or company.
 
 ## 4. Optional Sub-Agent Use
 
@@ -43,5 +44,6 @@ Do not split one page, one component, global design tokens, or a shared layout b
 - The primary action is visible in the first screen and repeated at appropriate points on the page.
 - Check the mobile layout, form states, links, navigation, and contrast.
 - Update metadata and required SEO information.
+- Confirm that every public page is included in `app/sitemap.ts` with its final canonical URL and has unique metadata.
 - Run relevant checks: `pnpm typecheck`, `pnpm lint`, tests, and e2e tests when UI or routes change.
 - Ensure no template data, fictional proof, or unused code related to the finished website remains in the project.

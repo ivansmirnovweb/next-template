@@ -1,8 +1,10 @@
 "use client";
 
 import { LoaderCircle, Send } from "lucide-react";
+import { Controller } from "react-hook-form";
 
 import { Button } from "@/components/ui/button";
+import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
@@ -12,6 +14,7 @@ import { useLeadForm } from "./hooks/useLeadForm";
 export const LeadForm = () => {
   const { form, onSubmit, isPending, error } = useLeadForm();
   const {
+    control,
     register,
     handleSubmit,
     formState: { errors },
@@ -89,6 +92,41 @@ export const LeadForm = () => {
           </p>
         </div>
       </div>
+
+      <Controller
+        control={control}
+        name="consent"
+        render={({ field }) => (
+          <div className="space-y-2">
+            <div className="flex items-start gap-3">
+              <Checkbox
+                id="lead-consent"
+                checked={field.value}
+                onCheckedChange={(checked) => field.onChange(checked === true)}
+                aria-describedby={
+                  errors.consent ? "lead-consent-error" : undefined
+                }
+                aria-invalid={Boolean(errors.consent)}
+              />
+              <Label
+                htmlFor="lead-consent"
+                className="text-sm leading-5 font-normal text-muted-foreground"
+              >
+                I agree to the processing of my personal data.
+              </Label>
+            </div>
+            {errors.consent && (
+              <p
+                id="lead-consent-error"
+                className="text-xs text-destructive"
+                role="alert"
+              >
+                {errors.consent.message}
+              </p>
+            )}
+          </div>
+        )}
+      />
 
       {error && (
         <p

@@ -7,6 +7,12 @@ export const leadSchema = z.object({
     .string()
     .min(1, "Tell us what you need")
     .max(200, "Use 200 characters or fewer"),
+  consent: z
+    .boolean()
+    .refine(
+      (value) => value,
+      "Consent to personal data processing is required",
+    ),
 });
 
 export type Lead = z.infer<typeof leadSchema>;

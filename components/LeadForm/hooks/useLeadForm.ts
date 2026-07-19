@@ -12,6 +12,7 @@ const DEFAULT_VALUES: Lead = {
   name: "",
   email: "",
   request: "",
+  consent: false,
 };
 
 export const useLeadForm = () => {
