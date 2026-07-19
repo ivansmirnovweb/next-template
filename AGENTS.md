@@ -8,6 +8,8 @@ This version has breaking changes — APIs, conventions, and file structure may 
 
 # Project Rules
 
+Before starting work, read `docs/README.md` and follow the documentation workflow described there.
+
 ## Structure
 
 - Keep `app/` thin: routes, `layout`, providers, `globals.css`, and route handlers only.
@@ -18,10 +20,6 @@ This version has breaking changes — APIs, conventions, and file structure may 
 - Put API transport in `api/client.ts` and endpoint-specific calls in `api/endpoints/*`.
 - Put shared domain types in `types/`.
 - One React component per file. Do not create `shared.tsx`-style files that export multiple components, and do not hide extra components inside local JSX helpers like `renderSomething()`. If a function returns JSX and represents a reusable UI piece, move it into its own component file. Components live in component files, types in `types`, and texts/constants in dedicated constants files.
-
-## Next.js
-
-- Before changing framework behavior, read the relevant docs in `node_modules/next/dist/docs/`.
 - Prefer route files that only wire data and render a view from `views/`.
 - Keep page UI out of `app/**/page.tsx` when it can live in `views/`.
 - Follow the existing Next 16 patterns already used in the repo, including async route params where applicable.
